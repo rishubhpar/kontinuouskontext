@@ -133,10 +133,25 @@ body {
 
 .header-author {
     display: inline-block;
-    margin: 0 15px 5px 0;
-    font-size: 1.1em;
+    margin: 0 20px 8px 0;
+    font-size: 1.15em;
     font-weight: 500;
-    color: #34495e;
+    color: #2c3e50;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease;
+}
+
+.header-author a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.header-author a:hover {
+    color: #3498db;
+    border-bottom-color: #3498db;
 }
 
 /* Header Affiliations */
@@ -175,9 +190,15 @@ body {
 
 .tldr-content {
     color: #34495e;
-    font-size: 0.95em;
-    line-height: 1.5;
+    font-size: 1.1em;
+    line-height: 1.6;
     margin: 0;
+    font-style: italic;
+}
+
+.highlight-text {
+    color: #3498db;
+    font-weight: 700;
     font-style: italic;
 }
 
@@ -267,6 +288,11 @@ body {
     font-style: italic;
     font-weight: 500;
     text-align: center;
+    min-height: 3em;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Strength control */
@@ -456,6 +482,11 @@ body {
     font-weight: 500;
     text-align: center;
     margin-bottom: 20px;
+    min-height: 3em;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .example-slider-container {
@@ -892,6 +923,11 @@ body {
     font-style: italic;
     margin: 0;
     text-align: center;
+    min-height: 3.6em;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .result-slider-container {
@@ -1266,6 +1302,38 @@ li {
         gap: 20px;
     }
     
+    /* Mobile-friendly dataset and method images */
+    .dataset-img {
+        max-width: 100%;
+        margin: 20px 0;
+        padding: 0 10px;
+    }
+    
+    .method-img {
+        max-width: 100%;
+        margin: 20px 0;
+        padding: 0 10px;
+    }
+    
+    /* Adjust section padding for mobile */
+    .dataset-section,
+    .method-section {
+        padding: 30px 15px;
+    }
+    
+    .dataset-section h2,
+    .method-section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+    
+    .dataset-section p,
+    .method-section p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+    
     .example-tile {
         padding: 20px;
     }
@@ -1313,6 +1381,7 @@ li {
     .result-instruction .simple-instruction {
         font-size: 1em;
         padding: 12px 18px;
+        min-height: 3.2em;
     }
     
     .result-slider-container {
@@ -1377,4 +1446,108 @@ img::before {
     text-align: center;
     padding: 40px;
     color: #999;
+}
+
+/* Citation Footer Styles */
+.citation-footer {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-top: 1px solid #dee2e6;
+    padding: 50px 0;
+    margin-top: 60px;
+}
+
+.citation-footer .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.citation-footer h3 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.bibtex-container {
+    position: relative;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #e9ecef;
+}
+
+.bibtex-code {
+    background: #f8f9fa;
+    padding: 30px;
+    margin: 0;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #2c3e50;
+    overflow-x: auto;
+    white-space: pre;
+    border: none;
+    border-radius: 0;
+    text-align: left;
+}
+
+.copy-bibtex-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+    z-index: 10;
+}
+
+.copy-bibtex-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.copy-bibtex-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+}
+
+/* Responsive design for citation footer */
+@media (max-width: 768px) {
+    .citation-footer {
+        padding: 40px 0;
+    }
+    
+    .citation-footer .container {
+        padding: 0 20px;
+    }
+    
+    .citation-footer h3 {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+    
+    .bibtex-code {
+        font-size: 12px;
+        padding: 20px;
+        line-height: 1.5;
+    }
+    
+    .copy-bibtex-btn {
+        position: static;
+        display: block;
+        margin: 20px auto 0;
+        width: fit-content;
+    }
 }

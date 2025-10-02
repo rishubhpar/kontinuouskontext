@@ -141,58 +141,34 @@ document.addEventListener('DOMContentLoaded', function() {
     const strengthSlider = document.getElementById('strength-slider');
     const resultImage = document.getElementById('result-image');
     
-    // Define the mapping of slider values to pre-saved images from aesthetic_model3 folder
+    // Define the mapping of slider values to pre-saved images from aesthetic_gold_dress folder
     const imageMapping = {
         0: {
-            src: 'assets/aesthetic_model3/image_0.png',
+            src: 'assets/aesthetic_gold_dress/row_00_col_00.png',
             caption: 'Original image (0.0 edit strength)'
         },
-        8: {
-            src: 'assets/aesthetic_model3/image_1.png',
-            caption: 'Light editing effect (0.08 edit strength)'
-        },
         17: {
-            src: 'assets/aesthetic_model3/image_2.png',
+            src: 'assets/aesthetic_gold_dress/row_00_col_01.png',
             caption: 'Light editing effect (0.17 edit strength)'
         },
-        25: {
-            src: 'assets/aesthetic_model3/image_3.png',
-            caption: 'Moderate editing effect (0.25 edit strength)'
-        },
         33: {
-            src: 'assets/aesthetic_model3/image_4.png',
+            src: 'assets/aesthetic_gold_dress/row_00_col_02.png',
             caption: 'Moderate editing effect (0.33 edit strength)'
         },
-        42: {
-            src: 'assets/aesthetic_model3/image_5.png',
-            caption: 'Balanced editing effect (0.42 edit strength)'
-        },
         50: {
-            src: 'assets/aesthetic_model3/image_6.png',
+            src: 'assets/aesthetic_gold_dress/row_00_col_03.png',
             caption: 'Balanced editing effect (0.5 edit strength)'
         },
-        58: {
-            src: 'assets/aesthetic_model3/image_7.png',
-            caption: 'Strong editing effect (0.58 edit strength)'
-        },
         67: {
-            src: 'assets/aesthetic_model3/image_8.png',
+            src: 'assets/aesthetic_gold_dress/row_00_col_04.png',
             caption: 'Strong editing effect (0.67 edit strength)'
         },
-        75: {
-            src: 'assets/aesthetic_model3/image_9.png',
-            caption: 'Very strong editing effect (0.75 edit strength)'
-        },
         83: {
-            src: 'assets/aesthetic_model3/image_10.png',
+            src: 'assets/aesthetic_gold_dress/row_00_col_05.png',
             caption: 'Very strong editing effect (0.83 edit strength)'
         },
-        92: {
-            src: 'assets/aesthetic_model3/image_11.png',
-            caption: 'Near maximum editing effect (0.92 edit strength)'
-        },
         100: {
-            src: 'assets/aesthetic_model3/image_11.png',
+            src: 'assets/aesthetic_gold_dress/row_00_col_06.png',
             caption: 'Maximum editing effect (1.0 edit strength)'
         }
     };
@@ -226,9 +202,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     this.style.opacity = '1';
                 };
                 
-                // Handle image error (fallback to first teaser image)
+                // Handle image error (fallback to first image)
                 resultImage.onerror = function() {
-                    this.src = 'assets/teaser/row_00_col_00.png';
+                    this.src = 'assets/aesthetic_gold_dress/row_00_col_00.png';
                     this.style.opacity = '1';
                 };
             }
@@ -261,18 +237,13 @@ function updateImageMapping(customMapping) {
 // Function to preload all images for smooth transitions
 function preloadImages() {
     const imagePaths = [
-        'assets/aesthetic_model3/image_0.png',
-        'assets/aesthetic_model3/image_1.png',
-        'assets/aesthetic_model3/image_2.png',
-        'assets/aesthetic_model3/image_3.png',
-        'assets/aesthetic_model3/image_4.png',
-        'assets/aesthetic_model3/image_5.png',
-        'assets/aesthetic_model3/image_6.png',
-        'assets/aesthetic_model3/image_7.png',
-        'assets/aesthetic_model3/image_8.png',
-        'assets/aesthetic_model3/image_9.png',
-        'assets/aesthetic_model3/image_10.png',
-        'assets/aesthetic_model3/image_11.png'
+        'assets/aesthetic_gold_dress/row_00_col_00.png',
+        'assets/aesthetic_gold_dress/row_00_col_01.png',
+        'assets/aesthetic_gold_dress/row_00_col_02.png',
+        'assets/aesthetic_gold_dress/row_00_col_03.png',
+        'assets/aesthetic_gold_dress/row_00_col_04.png',
+        'assets/aesthetic_gold_dress/row_00_col_05.png',
+        'assets/aesthetic_gold_dress/row_00_col_06.png'
     ];
     
     imagePaths.forEach(src => {
@@ -283,168 +254,249 @@ function preloadImages() {
 
 // Preload images when page loads
 document.addEventListener('DOMContentLoaded', preloadImages);
+document.addEventListener('DOMContentLoaded', preloadStrengthControlledImages);
 document.addEventListener('DOMContentLoaded', preloadExampleImages);
 document.addEventListener('DOMContentLoaded', preloadResultImages);
+
+// Function to preload strength controlled images for smooth transitions
+function preloadStrengthControlledImages() {
+    const strengthControlledImagePaths = [
+        // Horse uncle images (12 images)
+        'assets/horse_uncle/image_0.png',
+        'assets/horse_uncle/image_1.png',
+        'assets/horse_uncle/image_2.png',
+        'assets/horse_uncle/image_3.png',
+        'assets/horse_uncle/image_4.png',
+        'assets/horse_uncle/image_5.png',
+        'assets/horse_uncle/image_6.png',
+        'assets/horse_uncle/image_7.png',
+        'assets/horse_uncle/image_8.png',
+        'assets/horse_uncle/image_9.png',
+        'assets/horse_uncle/image_10.png',
+        'assets/horse_uncle/image_11.png',
+        // Car resize images (7 images)
+        'assets/car_resize/row_00_col_00.png',
+        'assets/car_resize/row_00_col_01.png',
+        'assets/car_resize/row_00_col_02.png',
+        'assets/car_resize/row_00_col_03.png',
+        'assets/car_resize/row_00_col_04.png',
+        'assets/car_resize/row_00_col_05.png',
+        'assets/car_resize/row_00_col_06.png',
+        // Person blur red hairs images (12 images)
+        'assets/person_blur_red_hairs/image_0.png',
+        'assets/person_blur_red_hairs/image_1.png',
+        'assets/person_blur_red_hairs/image_2.png',
+        'assets/person_blur_red_hairs/image_3.png',
+        'assets/person_blur_red_hairs/image_4.png',
+        'assets/person_blur_red_hairs/image_5.png',
+        'assets/person_blur_red_hairs/image_6.png',
+        'assets/person_blur_red_hairs/image_7.png',
+        'assets/person_blur_red_hairs/image_8.png',
+        'assets/person_blur_red_hairs/image_9.png',
+        'assets/person_blur_red_hairs/image_10.png',
+        'assets/person_blur_red_hairs/image_11.png'
+    ];
+    
+    strengthControlledImagePaths.forEach(path => {
+        const img = new Image();
+        img.src = path;
+    });
+}
 
 // Function to preload example images for smooth transitions
 function preloadExampleImages() {
     const exampleImagePaths = [
-        // Chair Apple Transform Floor images (12 images)
-        'assets/chair_apple_Transform_the_floor__1/image_0.png',
-        'assets/chair_apple_Transform_the_floor__1/image_1.png',
-        'assets/chair_apple_Transform_the_floor__1/image_2.png',
-        'assets/chair_apple_Transform_the_floor__1/image_3.png',
-        'assets/chair_apple_Transform_the_floor__1/image_4.png',
-        'assets/chair_apple_Transform_the_floor__1/image_5.png',
-        'assets/chair_apple_Transform_the_floor__1/image_6.png',
-        'assets/chair_apple_Transform_the_floor__1/image_7.png',
-        'assets/chair_apple_Transform_the_floor__1/image_8.png',
-        'assets/chair_apple_Transform_the_floor__1/image_9.png',
-        'assets/chair_apple_Transform_the_floor__1/image_10.png',
-        'assets/chair_apple_Transform_the_floor__1/image_11.png',
-        // Enfield Transform Scene images (12 images)
-        'assets/enfield3_Transform_the_scene__0/image_0.png',
-        'assets/enfield3_Transform_the_scene__0/image_1.png',
-        'assets/enfield3_Transform_the_scene__0/image_2.png',
-        'assets/enfield3_Transform_the_scene__0/image_3.png',
-        'assets/enfield3_Transform_the_scene__0/image_4.png',
-        'assets/enfield3_Transform_the_scene__0/image_5.png',
-        'assets/enfield3_Transform_the_scene__0/image_6.png',
-        'assets/enfield3_Transform_the_scene__0/image_7.png',
-        'assets/enfield3_Transform_the_scene__0/image_8.png',
-        'assets/enfield3_Transform_the_scene__0/image_9.png',
-        'assets/enfield3_Transform_the_scene__0/image_10.png',
-        'assets/enfield3_Transform_the_scene__0/image_11.png',
-        // Model1 Grow Hair images (12 images)
-        'assets/model1_boot_Grow_her_hairs_to_be_0/image_0.png',
-        'assets/model1_boot_Grow_her_hairs_to_be_0/image_1.png',
-        'assets/model1_boot_Grow_her_hairs_to_be_0/image_2.png',
-        'assets/model1_boot_Grow_her_hairs_to_be_0/image_3.png',
-        'assets/model1_boot_Grow_her_hairs_to_be_0/image_4.png',
-        'assets/model1_boot_Grow_her_hairs_to_be_0/image_5.png',
-        'assets/model1_boot_Grow_her_hairs_to_be_0/image_6.png',
-        'assets/model1_boot_Grow_her_hairs_to_be_0/image_7.png',
-        'assets/model1_boot_Grow_her_hairs_to_be_0/image_8.png',
-        'assets/model1_boot_Grow_her_hairs_to_be_0/image_9.png',
-        'assets/model1_boot_Grow_her_hairs_to_be_0/image_10.png',
-        'assets/model1_boot_Grow_her_hairs_to_be_0/image_11.png',
-        // Model1 Make Chubby images (12 images)
-        'assets/model1_boot_Make_her_chubby_and__1/image_0.png',
-        'assets/model1_boot_Make_her_chubby_and__1/image_1.png',
-        'assets/model1_boot_Make_her_chubby_and__1/image_2.png',
-        'assets/model1_boot_Make_her_chubby_and__1/image_3.png',
-        'assets/model1_boot_Make_her_chubby_and__1/image_4.png',
-        'assets/model1_boot_Make_her_chubby_and__1/image_5.png',
-        'assets/model1_boot_Make_her_chubby_and__1/image_6.png',
-        'assets/model1_boot_Make_her_chubby_and__1/image_7.png',
-        'assets/model1_boot_Make_her_chubby_and__1/image_8.png',
-        'assets/model1_boot_Make_her_chubby_and__1/image_9.png',
-        'assets/model1_boot_Make_her_chubby_and__1/image_10.png',
-        'assets/model1_boot_Make_her_chubby_and__1/image_11.png',
-        // Model2 Reimagine Scene images (12 images)
-        'assets/model2_Reimagine_the_scene__1/image_0.png',
-        'assets/model2_Reimagine_the_scene__1/image_1.png',
-        'assets/model2_Reimagine_the_scene__1/image_2.png',
-        'assets/model2_Reimagine_the_scene__1/image_3.png',
-        'assets/model2_Reimagine_the_scene__1/image_4.png',
-        'assets/model2_Reimagine_the_scene__1/image_5.png',
-        'assets/model2_Reimagine_the_scene__1/image_6.png',
-        'assets/model2_Reimagine_the_scene__1/image_7.png',
-        'assets/model2_Reimagine_the_scene__1/image_8.png',
-        'assets/model2_Reimagine_the_scene__1/image_9.png',
-        'assets/model2_Reimagine_the_scene__1/image_10.png',
-        'assets/model2_Reimagine_the_scene__1/image_11.png',
-        // No Lamp Turn On Light images (12 images)
-        'assets/no_lamp_Turn_on_the_hanging__2/image_0.png',
-        'assets/no_lamp_Turn_on_the_hanging__2/image_1.png',
-        'assets/no_lamp_Turn_on_the_hanging__2/image_2.png',
-        'assets/no_lamp_Turn_on_the_hanging__2/image_3.png',
-        'assets/no_lamp_Turn_on_the_hanging__2/image_4.png',
-        'assets/no_lamp_Turn_on_the_hanging__2/image_5.png',
-        'assets/no_lamp_Turn_on_the_hanging__2/image_6.png',
-        'assets/no_lamp_Turn_on_the_hanging__2/image_7.png',
-        'assets/no_lamp_Turn_on_the_hanging__2/image_8.png',
-        'assets/no_lamp_Turn_on_the_hanging__2/image_9.png',
-        'assets/no_lamp_Turn_on_the_hanging__2/image_10.png',
-        'assets/no_lamp_Turn_on_the_hanging__2/image_11.png',
-        // Red Panda Transform images (12 images)
-        'assets/red_panda_Transform_the_panda__0/image_0.png',
-        'assets/red_panda_Transform_the_panda__0/image_1.png',
-        'assets/red_panda_Transform_the_panda__0/image_2.png',
-        'assets/red_panda_Transform_the_panda__0/image_3.png',
-        'assets/red_panda_Transform_the_panda__0/image_4.png',
-        'assets/red_panda_Transform_the_panda__0/image_5.png',
-        'assets/red_panda_Transform_the_panda__0/image_6.png',
-        'assets/red_panda_Transform_the_panda__0/image_7.png',
-        'assets/red_panda_Transform_the_panda__0/image_8.png',
-        'assets/red_panda_Transform_the_panda__0/image_9.png',
-        'assets/red_panda_Transform_the_panda__0/image_10.png',
-        'assets/red_panda_Transform_the_panda__0/image_11.png',
-        // Teaser Model2 Make Laugh images (12 images)
-        'assets/teaser_model2_Make_him_laugh_0/image_0.png',
-        'assets/teaser_model2_Make_him_laugh_0/image_1.png',
-        'assets/teaser_model2_Make_him_laugh_0/image_2.png',
-        'assets/teaser_model2_Make_him_laugh_0/image_3.png',
-        'assets/teaser_model2_Make_him_laugh_0/image_4.png',
-        'assets/teaser_model2_Make_him_laugh_0/image_5.png',
-        'assets/teaser_model2_Make_him_laugh_0/image_6.png',
-        'assets/teaser_model2_Make_him_laugh_0/image_7.png',
-        'assets/teaser_model2_Make_him_laugh_0/image_8.png',
-        'assets/teaser_model2_Make_him_laugh_0/image_9.png',
-        'assets/teaser_model2_Make_him_laugh_0/image_10.png',
-        'assets/teaser_model2_Make_him_laugh_0/image_11.png',
-        // Teaser Model2 Transform Hair images (12 images)
-        'assets/teaser_model2_Tranform_his_hairs_i_1/image_0.png',
-        'assets/teaser_model2_Tranform_his_hairs_i_1/image_1.png',
-        'assets/teaser_model2_Tranform_his_hairs_i_1/image_2.png',
-        'assets/teaser_model2_Tranform_his_hairs_i_1/image_3.png',
-        'assets/teaser_model2_Tranform_his_hairs_i_1/image_4.png',
-        'assets/teaser_model2_Tranform_his_hairs_i_1/image_5.png',
-        'assets/teaser_model2_Tranform_his_hairs_i_1/image_6.png',
-        'assets/teaser_model2_Tranform_his_hairs_i_1/image_7.png',
-        'assets/teaser_model2_Tranform_his_hairs_i_1/image_8.png',
-        'assets/teaser_model2_Tranform_his_hairs_i_1/image_9.png',
-        'assets/teaser_model2_Tranform_his_hairs_i_1/image_10.png',
-        'assets/teaser_model2_Tranform_his_hairs_i_1/image_11.png',
-        // Woody Make Fat images (12 images)
-        'assets/woody_Make_him_fat_and_chu_1/image_0.png',
-        'assets/woody_Make_him_fat_and_chu_1/image_1.png',
-        'assets/woody_Make_him_fat_and_chu_1/image_2.png',
-        'assets/woody_Make_him_fat_and_chu_1/image_3.png',
-        'assets/woody_Make_him_fat_and_chu_1/image_4.png',
-        'assets/woody_Make_him_fat_and_chu_1/image_5.png',
-        'assets/woody_Make_him_fat_and_chu_1/image_6.png',
-        'assets/woody_Make_him_fat_and_chu_1/image_7.png',
-        'assets/woody_Make_him_fat_and_chu_1/image_8.png',
-        'assets/woody_Make_him_fat_and_chu_1/image_9.png',
-        'assets/woody_Make_him_fat_and_chu_1/image_10.png',
-        'assets/woody_Make_him_fat_and_chu_1/image_11.png',
-        // Person Blur Make Chubby images (12 images)
-        'assets/person_blur_Make_her_chubby_and__0/image_0.png',
-        'assets/person_blur_Make_her_chubby_and__0/image_1.png',
-        'assets/person_blur_Make_her_chubby_and__0/image_2.png',
-        'assets/person_blur_Make_her_chubby_and__0/image_3.png',
-        'assets/person_blur_Make_her_chubby_and__0/image_4.png',
-        'assets/person_blur_Make_her_chubby_and__0/image_5.png',
-        'assets/person_blur_Make_her_chubby_and__0/image_6.png',
-        'assets/person_blur_Make_her_chubby_and__0/image_7.png',
-        'assets/person_blur_Make_her_chubby_and__0/image_8.png',
-        'assets/person_blur_Make_her_chubby_and__0/image_9.png',
-        'assets/person_blur_Make_her_chubby_and__0/image_10.png',
-        'assets/person_blur_Make_her_chubby_and__0/image_11.png',
-        // Glasses Alternative images (12 images)
-        'assets/glasses_img4_0/image_0.png',
-        'assets/glasses_img4_0/image_1.png',
-        'assets/glasses_img4_0/image_2.png',
-        'assets/glasses_img4_0/image_3.png',
-        'assets/glasses_img4_0/image_4.png',
-        'assets/glasses_img4_0/image_5.png',
-        'assets/glasses_img4_0/image_6.png',
-        'assets/glasses_img4_0/image_7.png',
-        'assets/glasses_img4_0/image_8.png',
-        'assets/glasses_img4_0/image_9.png',
-        'assets/glasses_img4_0/image_10.png',
-        'assets/glasses_img4_0/image_11.png'
+        // Jacket Leather images (12 images)
+        'assets/jacket_leather/image_0.png',
+        'assets/jacket_leather/image_1.png',
+        'assets/jacket_leather/image_2.png',
+        'assets/jacket_leather/image_3.png',
+        'assets/jacket_leather/image_4.png',
+        'assets/jacket_leather/image_5.png',
+        'assets/jacket_leather/image_6.png',
+        'assets/jacket_leather/image_7.png',
+        'assets/jacket_leather/image_8.png',
+        'assets/jacket_leather/image_9.png',
+        'assets/jacket_leather/image_10.png',
+        'assets/jacket_leather/image_11.png',
+        // Enfield3 Autumn images (12 images)
+        'assets/enfield3_autumn/image_0.png',
+        'assets/enfield3_autumn/image_1.png',
+        'assets/enfield3_autumn/image_2.png',
+        'assets/enfield3_autumn/image_3.png',
+        'assets/enfield3_autumn/image_4.png',
+        'assets/enfield3_autumn/image_5.png',
+        'assets/enfield3_autumn/image_6.png',
+        'assets/enfield3_autumn/image_7.png',
+        'assets/enfield3_autumn/image_8.png',
+        'assets/enfield3_autumn/image_9.png',
+        'assets/enfield3_autumn/image_10.png',
+        'assets/enfield3_autumn/image_11.png',
+        // Glasses Aviator images (12 images)
+        'assets/glasses_aviator/image_0.png',
+        'assets/glasses_aviator/image_1.png',
+        'assets/glasses_aviator/image_2.png',
+        'assets/glasses_aviator/image_3.png',
+        'assets/glasses_aviator/image_4.png',
+        'assets/glasses_aviator/image_5.png',
+        'assets/glasses_aviator/image_6.png',
+        'assets/glasses_aviator/image_7.png',
+        'assets/glasses_aviator/image_8.png',
+        'assets/glasses_aviator/image_9.png',
+        'assets/glasses_aviator/image_10.png',
+        'assets/glasses_aviator/image_11.png',
+        // Lamp Yellow images (11 images)
+        'assets/lamp_yellow/image_0.png',
+        'assets/lamp_yellow/image_1.png',
+        'assets/lamp_yellow/image_2.png',
+        'assets/lamp_yellow/image_3.png',
+        'assets/lamp_yellow/image_4.png',
+        'assets/lamp_yellow/image_5.png',
+        'assets/lamp_yellow/image_6.png',
+        'assets/lamp_yellow/image_7.png',
+        'assets/lamp_yellow/image_8.png',
+        'assets/lamp_yellow/image_9.png',
+        'assets/lamp_yellow/image_10.png',
+        // Man Fur Jacket Bike images (9 images)
+        'assets/man_fur_jacket_bike/image_0.png',
+        'assets/man_fur_jacket_bike/image_1.png',
+        'assets/man_fur_jacket_bike/image_2.png',
+        'assets/man_fur_jacket_bike/image_3.png',
+        'assets/man_fur_jacket_bike/image_4.png',
+        'assets/man_fur_jacket_bike/image_5.png',
+        'assets/man_fur_jacket_bike/image_6.png',
+        'assets/man_fur_jacket_bike/image_7.png',
+        'assets/man_fur_jacket_bike/image_8.png',
+        // Model Long Hair images (12 images)
+        'assets/model_long_hair/image_0.png',
+        'assets/model_long_hair/image_1.png',
+        'assets/model_long_hair/image_2.png',
+        'assets/model_long_hair/image_3.png',
+        'assets/model_long_hair/image_4.png',
+        'assets/model_long_hair/image_5.png',
+        'assets/model_long_hair/image_6.png',
+        'assets/model_long_hair/image_7.png',
+        'assets/model_long_hair/image_8.png',
+        'assets/model_long_hair/image_9.png',
+        'assets/model_long_hair/image_10.png',
+        'assets/model_long_hair/image_11.png',
+        // Model2 Sunlight images (12 images)
+        'assets/model2_sunlight/image_0.png',
+        'assets/model2_sunlight/image_1.png',
+        'assets/model2_sunlight/image_2.png',
+        'assets/model2_sunlight/image_3.png',
+        'assets/model2_sunlight/image_4.png',
+        'assets/model2_sunlight/image_5.png',
+        'assets/model2_sunlight/image_6.png',
+        'assets/model2_sunlight/image_7.png',
+        'assets/model2_sunlight/image_8.png',
+        'assets/model2_sunlight/image_9.png',
+        'assets/model2_sunlight/image_10.png',
+        'assets/model2_sunlight/image_11.png',
+        // Model1 Chubby and Fat images (12 images)
+        'assets/model1_chubby_and_fat/image_0.png',
+        'assets/model1_chubby_and_fat/image_1.png',
+        'assets/model1_chubby_and_fat/image_2.png',
+        'assets/model1_chubby_and_fat/image_3.png',
+        'assets/model1_chubby_and_fat/image_4.png',
+        'assets/model1_chubby_and_fat/image_5.png',
+        'assets/model1_chubby_and_fat/image_6.png',
+        'assets/model1_chubby_and_fat/image_7.png',
+        'assets/model1_chubby_and_fat/image_8.png',
+        'assets/model1_chubby_and_fat/image_9.png',
+        'assets/model1_chubby_and_fat/image_10.png',
+        'assets/model1_chubby_and_fat/image_11.png',
+        // Panda Indoor2 Husky Dog images (12 images)
+        'assets/panda_indoor2_husky_dog/image_0.png',
+        'assets/panda_indoor2_husky_dog/image_1.png',
+        'assets/panda_indoor2_husky_dog/image_2.png',
+        'assets/panda_indoor2_husky_dog/image_3.png',
+        'assets/panda_indoor2_husky_dog/image_4.png',
+        'assets/panda_indoor2_husky_dog/image_5.png',
+        'assets/panda_indoor2_husky_dog/image_6.png',
+        'assets/panda_indoor2_husky_dog/image_7.png',
+        'assets/panda_indoor2_husky_dog/image_8.png',
+        'assets/panda_indoor2_husky_dog/image_9.png',
+        'assets/panda_indoor2_husky_dog/image_10.png',
+        'assets/panda_indoor2_husky_dog/image_11.png',
+        // Panda Mouth Open images (12 images)
+        'assets/panda_mouth_open/image_0.png',
+        'assets/panda_mouth_open/image_1.png',
+        'assets/panda_mouth_open/image_2.png',
+        'assets/panda_mouth_open/image_3.png',
+        'assets/panda_mouth_open/image_4.png',
+        'assets/panda_mouth_open/image_5.png',
+        'assets/panda_mouth_open/image_6.png',
+        'assets/panda_mouth_open/image_7.png',
+        'assets/panda_mouth_open/image_8.png',
+        'assets/panda_mouth_open/image_9.png',
+        'assets/panda_mouth_open/image_10.png',
+        'assets/panda_mouth_open/image_11.png',
+        // Person Blur Pixar images (12 images)
+        'assets/person_blur_pixar/image_0.png',
+        'assets/person_blur_pixar/image_1.png',
+        'assets/person_blur_pixar/image_2.png',
+        'assets/person_blur_pixar/image_3.png',
+        'assets/person_blur_pixar/image_4.png',
+        'assets/person_blur_pixar/image_5.png',
+        'assets/person_blur_pixar/image_6.png',
+        'assets/person_blur_pixar/image_7.png',
+        'assets/person_blur_pixar/image_8.png',
+        'assets/person_blur_pixar/image_9.png',
+        'assets/person_blur_pixar/image_10.png',
+        'assets/person_blur_pixar/image_11.png',
+        // Tibbet Autumn images (12 images)
+        'assets/tibbet_autumn/image_0.png',
+        'assets/tibbet_autumn/image_1.png',
+        'assets/tibbet_autumn/image_2.png',
+        'assets/tibbet_autumn/image_3.png',
+        'assets/tibbet_autumn/image_4.png',
+        'assets/tibbet_autumn/image_5.png',
+        'assets/tibbet_autumn/image_6.png',
+        'assets/tibbet_autumn/image_7.png',
+        'assets/tibbet_autumn/image_8.png',
+        'assets/tibbet_autumn/image_9.png',
+        'assets/tibbet_autumn/image_10.png',
+        'assets/tibbet_autumn/image_11.png',
+        // Venice1 Grow Vegetation images (12 images)
+        'assets/venice1_Grow_vegetation_on_t_3/image_0.png',
+        'assets/venice1_Grow_vegetation_on_t_3/image_1.png',
+        'assets/venice1_Grow_vegetation_on_t_3/image_2.png',
+        'assets/venice1_Grow_vegetation_on_t_3/image_3.png',
+        'assets/venice1_Grow_vegetation_on_t_3/image_4.png',
+        'assets/venice1_Grow_vegetation_on_t_3/image_5.png',
+        'assets/venice1_Grow_vegetation_on_t_3/image_6.png',
+        'assets/venice1_Grow_vegetation_on_t_3/image_7.png',
+        'assets/venice1_Grow_vegetation_on_t_3/image_8.png',
+        'assets/venice1_Grow_vegetation_on_t_3/image_9.png',
+        'assets/venice1_Grow_vegetation_on_t_3/image_10.png',
+        'assets/venice1_Grow_vegetation_on_t_3/image_11.png',
+        // Woody Fat and Chubby images (12 images)
+        'assets/woody_fat_and_chubby/image_0.png',
+        'assets/woody_fat_and_chubby/image_1.png',
+        'assets/woody_fat_and_chubby/image_2.png',
+        'assets/woody_fat_and_chubby/image_3.png',
+        'assets/woody_fat_and_chubby/image_4.png',
+        'assets/woody_fat_and_chubby/image_5.png',
+        'assets/woody_fat_and_chubby/image_6.png',
+        'assets/woody_fat_and_chubby/image_7.png',
+        'assets/woody_fat_and_chubby/image_8.png',
+        'assets/woody_fat_and_chubby/image_9.png',
+        'assets/woody_fat_and_chubby/image_10.png',
+        'assets/woody_fat_and_chubby/image_11.png',
+        // Enfield3 Winter Snow images (12 images)
+        'assets/enfield3_winter_snow/image_0.png',
+        'assets/enfield3_winter_snow/image_1.png',
+        'assets/enfield3_winter_snow/image_2.png',
+        'assets/enfield3_winter_snow/image_3.png',
+        'assets/enfield3_winter_snow/image_4.png',
+        'assets/enfield3_winter_snow/image_5.png',
+        'assets/enfield3_winter_snow/image_6.png',
+        'assets/enfield3_winter_snow/image_7.png',
+        'assets/enfield3_winter_snow/image_8.png',
+        'assets/enfield3_winter_snow/image_9.png',
+        'assets/enfield3_winter_snow/image_10.png',
+        'assets/enfield3_winter_snow/image_11.png'
     ];
     
     exampleImagePaths.forEach(src => {
@@ -658,204 +710,345 @@ function setupResultSlider(type, sliderId, imageId, imageMapping) {
 
 // Interactive Examples Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Define image mappings for each example
+    // Define image mappings for the "Strength Controlled Image Editing" section
+    const strengthControlledMappings = {
+        'horse-uncle': {
+            0: 'assets/horse_uncle/image_0.png',
+            8: 'assets/horse_uncle/image_1.png',
+            17: 'assets/horse_uncle/image_2.png',
+            25: 'assets/horse_uncle/image_3.png',
+            33: 'assets/horse_uncle/image_4.png',
+            42: 'assets/horse_uncle/image_5.png',
+            50: 'assets/horse_uncle/image_6.png',
+            58: 'assets/horse_uncle/image_7.png',
+            67: 'assets/horse_uncle/image_8.png',
+            75: 'assets/horse_uncle/image_9.png',
+            83: 'assets/horse_uncle/image_10.png',
+            92: 'assets/horse_uncle/image_11.png',
+            100: 'assets/horse_uncle/image_11.png'
+        },
+        'car-resize': {
+            0: 'assets/car_resize/row_00_col_00.png',
+            17: 'assets/car_resize/row_00_col_01.png',
+            33: 'assets/car_resize/row_00_col_02.png',
+            50: 'assets/car_resize/row_00_col_03.png',
+            67: 'assets/car_resize/row_00_col_04.png',
+            83: 'assets/car_resize/row_00_col_05.png',
+            100: 'assets/car_resize/row_00_col_06.png'
+        },
+        'person-blur-red-hairs': {
+            0: 'assets/person_blur_red_hairs/image_0.png',
+            8: 'assets/person_blur_red_hairs/image_1.png',
+            17: 'assets/person_blur_red_hairs/image_2.png',
+            25: 'assets/person_blur_red_hairs/image_3.png',
+            33: 'assets/person_blur_red_hairs/image_4.png',
+            42: 'assets/person_blur_red_hairs/image_5.png',
+            50: 'assets/person_blur_red_hairs/image_6.png',
+            58: 'assets/person_blur_red_hairs/image_7.png',
+            67: 'assets/person_blur_red_hairs/image_8.png',
+            75: 'assets/person_blur_red_hairs/image_9.png',
+            83: 'assets/person_blur_red_hairs/image_10.png',
+            92: 'assets/person_blur_red_hairs/image_11.png',
+            100: 'assets/person_blur_red_hairs/image_11.png'
+        }
+    };
+
+    // Setup the "Strength Controlled Image Editing" sliders
+    setupExampleSlider('horse-uncle', 'horse-uncle-slider', 'horse-uncle-image', strengthControlledMappings['horse-uncle']);
+    setupExampleSlider('car-resize', 'car-resize-slider', 'car-resize-image', strengthControlledMappings['car-resize']);
+    setupExampleSlider('person-blur-red-hairs', 'person-blur-red-hairs-slider', 'person-blur-red-hairs-image', strengthControlledMappings['person-blur-red-hairs']);
+
+    // Define image mappings for all 15 results
     const exampleMappings = {
-        'chair-apple': {
-            0: 'assets/chair_apple_Transform_the_floor__1/image_0.png',
-            8: 'assets/chair_apple_Transform_the_floor__1/image_1.png',
-            17: 'assets/chair_apple_Transform_the_floor__1/image_2.png',
-            25: 'assets/chair_apple_Transform_the_floor__1/image_3.png',
-            33: 'assets/chair_apple_Transform_the_floor__1/image_4.png',
-            42: 'assets/chair_apple_Transform_the_floor__1/image_5.png',
-            50: 'assets/chair_apple_Transform_the_floor__1/image_6.png',
-            58: 'assets/chair_apple_Transform_the_floor__1/image_7.png',
-            67: 'assets/chair_apple_Transform_the_floor__1/image_8.png',
-            75: 'assets/chair_apple_Transform_the_floor__1/image_9.png',
-            83: 'assets/chair_apple_Transform_the_floor__1/image_10.png',
-            92: 'assets/chair_apple_Transform_the_floor__1/image_11.png',
-            100: 'assets/chair_apple_Transform_the_floor__1/image_11.png'
+        'jacket-leather': {
+            0: 'assets/jacket_leather/image_0.png',
+            8: 'assets/jacket_leather/image_1.png',
+            17: 'assets/jacket_leather/image_2.png',
+            25: 'assets/jacket_leather/image_3.png',
+            33: 'assets/jacket_leather/image_4.png',
+            42: 'assets/jacket_leather/image_5.png',
+            50: 'assets/jacket_leather/image_6.png',
+            58: 'assets/jacket_leather/image_7.png',
+            67: 'assets/jacket_leather/image_8.png',
+            75: 'assets/jacket_leather/image_9.png',
+            83: 'assets/jacket_leather/image_10.png',
+            92: 'assets/jacket_leather/image_11.png',
+            100: 'assets/jacket_leather/image_11.png'
         },
-        'enfield': {
-            0: 'assets/enfield3_Transform_the_scene__0/image_0.png',
-            8: 'assets/enfield3_Transform_the_scene__0/image_1.png',
-            17: 'assets/enfield3_Transform_the_scene__0/image_2.png',
-            25: 'assets/enfield3_Transform_the_scene__0/image_3.png',
-            33: 'assets/enfield3_Transform_the_scene__0/image_4.png',
-            42: 'assets/enfield3_Transform_the_scene__0/image_5.png',
-            50: 'assets/enfield3_Transform_the_scene__0/image_6.png',
-            58: 'assets/enfield3_Transform_the_scene__0/image_7.png',
-            67: 'assets/enfield3_Transform_the_scene__0/image_8.png',
-            75: 'assets/enfield3_Transform_the_scene__0/image_9.png',
-            83: 'assets/enfield3_Transform_the_scene__0/image_10.png',
-            92: 'assets/enfield3_Transform_the_scene__0/image_11.png',
-            100: 'assets/enfield3_Transform_the_scene__0/image_11.png'
+        'enfield-autumn': {
+            0: 'assets/enfield3_autumn/image_0.png',
+            8: 'assets/enfield3_autumn/image_1.png',
+            17: 'assets/enfield3_autumn/image_2.png',
+            25: 'assets/enfield3_autumn/image_3.png',
+            33: 'assets/enfield3_autumn/image_4.png',
+            42: 'assets/enfield3_autumn/image_5.png',
+            50: 'assets/enfield3_autumn/image_6.png',
+            58: 'assets/enfield3_autumn/image_7.png',
+            67: 'assets/enfield3_autumn/image_8.png',
+            75: 'assets/enfield3_autumn/image_9.png',
+            83: 'assets/enfield3_autumn/image_10.png',
+            92: 'assets/enfield3_autumn/image_11.png',
+            100: 'assets/enfield3_autumn/image_11.png'
         },
-        'model1-hair': {
-            0: 'assets/model1_boot_Grow_her_hairs_to_be_0/image_0.png',
-            8: 'assets/model1_boot_Grow_her_hairs_to_be_0/image_1.png',
-            17: 'assets/model1_boot_Grow_her_hairs_to_be_0/image_2.png',
-            25: 'assets/model1_boot_Grow_her_hairs_to_be_0/image_3.png',
-            33: 'assets/model1_boot_Grow_her_hairs_to_be_0/image_4.png',
-            42: 'assets/model1_boot_Grow_her_hairs_to_be_0/image_5.png',
-            50: 'assets/model1_boot_Grow_her_hairs_to_be_0/image_6.png',
-            58: 'assets/model1_boot_Grow_her_hairs_to_be_0/image_7.png',
-            67: 'assets/model1_boot_Grow_her_hairs_to_be_0/image_8.png',
-            75: 'assets/model1_boot_Grow_her_hairs_to_be_0/image_9.png',
-            83: 'assets/model1_boot_Grow_her_hairs_to_be_0/image_10.png',
-            92: 'assets/model1_boot_Grow_her_hairs_to_be_0/image_11.png',
-            100: 'assets/model1_boot_Grow_her_hairs_to_be_0/image_11.png'
+        'glasses-aviator': {
+            0: 'assets/glasses_aviator/image_0.png',
+            8: 'assets/glasses_aviator/image_1.png',
+            17: 'assets/glasses_aviator/image_2.png',
+            25: 'assets/glasses_aviator/image_3.png',
+            33: 'assets/glasses_aviator/image_4.png',
+            42: 'assets/glasses_aviator/image_5.png',
+            50: 'assets/glasses_aviator/image_6.png',
+            58: 'assets/glasses_aviator/image_7.png',
+            67: 'assets/glasses_aviator/image_8.png',
+            75: 'assets/glasses_aviator/image_9.png',
+            83: 'assets/glasses_aviator/image_10.png',
+            92: 'assets/glasses_aviator/image_11.png',
+            100: 'assets/glasses_aviator/image_11.png'
         },
-        'model1-chubby': {
-            0: 'assets/model1_boot_Make_her_chubby_and__1/image_0.png',
-            8: 'assets/model1_boot_Make_her_chubby_and__1/image_1.png',
-            17: 'assets/model1_boot_Make_her_chubby_and__1/image_2.png',
-            25: 'assets/model1_boot_Make_her_chubby_and__1/image_3.png',
-            33: 'assets/model1_boot_Make_her_chubby_and__1/image_4.png',
-            42: 'assets/model1_boot_Make_her_chubby_and__1/image_5.png',
-            50: 'assets/model1_boot_Make_her_chubby_and__1/image_6.png',
-            58: 'assets/model1_boot_Make_her_chubby_and__1/image_7.png',
-            67: 'assets/model1_boot_Make_her_chubby_and__1/image_8.png',
-            75: 'assets/model1_boot_Make_her_chubby_and__1/image_9.png',
-            83: 'assets/model1_boot_Make_her_chubby_and__1/image_10.png',
-            92: 'assets/model1_boot_Make_her_chubby_and__1/image_11.png',
-            100: 'assets/model1_boot_Make_her_chubby_and__1/image_11.png'
+        'lamp-yellow': {
+            0: 'assets/lamp_yellow/image_0.png',
+            9: 'assets/lamp_yellow/image_1.png',
+            18: 'assets/lamp_yellow/image_2.png',
+            27: 'assets/lamp_yellow/image_3.png',
+            36: 'assets/lamp_yellow/image_4.png',
+            45: 'assets/lamp_yellow/image_5.png',
+            55: 'assets/lamp_yellow/image_6.png',
+            64: 'assets/lamp_yellow/image_7.png',
+            73: 'assets/lamp_yellow/image_8.png',
+            82: 'assets/lamp_yellow/image_9.png',
+            91: 'assets/lamp_yellow/image_10.png',
+            100: 'assets/lamp_yellow/image_10.png'
         },
-        'model2-reimagine': {
-            0: 'assets/model2_Reimagine_the_scene__1/image_0.png',
-            8: 'assets/model2_Reimagine_the_scene__1/image_1.png',
-            17: 'assets/model2_Reimagine_the_scene__1/image_2.png',
-            25: 'assets/model2_Reimagine_the_scene__1/image_3.png',
-            33: 'assets/model2_Reimagine_the_scene__1/image_4.png',
-            42: 'assets/model2_Reimagine_the_scene__1/image_5.png',
-            50: 'assets/model2_Reimagine_the_scene__1/image_6.png',
-            58: 'assets/model2_Reimagine_the_scene__1/image_7.png',
-            67: 'assets/model2_Reimagine_the_scene__1/image_8.png',
-            75: 'assets/model2_Reimagine_the_scene__1/image_9.png',
-            83: 'assets/model2_Reimagine_the_scene__1/image_10.png',
-            92: 'assets/model2_Reimagine_the_scene__1/image_11.png',
-            100: 'assets/model2_Reimagine_the_scene__1/image_11.png'
+        'man-fur-jacket-bike': {
+            0: 'assets/man_fur_jacket_bike/image_0.png',
+            12: 'assets/man_fur_jacket_bike/image_1.png',
+            25: 'assets/man_fur_jacket_bike/image_2.png',
+            37: 'assets/man_fur_jacket_bike/image_3.png',
+            50: 'assets/man_fur_jacket_bike/image_4.png',
+            62: 'assets/man_fur_jacket_bike/image_5.png',
+            75: 'assets/man_fur_jacket_bike/image_6.png',
+            87: 'assets/man_fur_jacket_bike/image_7.png',
+            100: 'assets/man_fur_jacket_bike/image_8.png'
         },
-        'lamp': {
-            0: 'assets/no_lamp_Turn_on_the_hanging__2/image_0.png',
-            8: 'assets/no_lamp_Turn_on_the_hanging__2/image_1.png',
-            17: 'assets/no_lamp_Turn_on_the_hanging__2/image_2.png',
-            25: 'assets/no_lamp_Turn_on_the_hanging__2/image_3.png',
-            33: 'assets/no_lamp_Turn_on_the_hanging__2/image_4.png',
-            42: 'assets/no_lamp_Turn_on_the_hanging__2/image_5.png',
-            50: 'assets/no_lamp_Turn_on_the_hanging__2/image_6.png',
-            58: 'assets/no_lamp_Turn_on_the_hanging__2/image_7.png',
-            67: 'assets/no_lamp_Turn_on_the_hanging__2/image_8.png',
-            75: 'assets/no_lamp_Turn_on_the_hanging__2/image_9.png',
-            83: 'assets/no_lamp_Turn_on_the_hanging__2/image_10.png',
-            92: 'assets/no_lamp_Turn_on_the_hanging__2/image_11.png',
-            100: 'assets/no_lamp_Turn_on_the_hanging__2/image_11.png'
+        'model-long-hair': {
+            0: 'assets/model_long_hair/image_0.png',
+            8: 'assets/model_long_hair/image_1.png',
+            17: 'assets/model_long_hair/image_2.png',
+            25: 'assets/model_long_hair/image_3.png',
+            33: 'assets/model_long_hair/image_4.png',
+            42: 'assets/model_long_hair/image_5.png',
+            50: 'assets/model_long_hair/image_6.png',
+            58: 'assets/model_long_hair/image_7.png',
+            67: 'assets/model_long_hair/image_8.png',
+            75: 'assets/model_long_hair/image_9.png',
+            83: 'assets/model_long_hair/image_10.png',
+            92: 'assets/model_long_hair/image_11.png',
+            100: 'assets/model_long_hair/image_11.png'
         },
-        'red-panda': {
-            0: 'assets/red_panda_Transform_the_panda__0/image_0.png',
-            8: 'assets/red_panda_Transform_the_panda__0/image_1.png',
-            17: 'assets/red_panda_Transform_the_panda__0/image_2.png',
-            25: 'assets/red_panda_Transform_the_panda__0/image_3.png',
-            33: 'assets/red_panda_Transform_the_panda__0/image_4.png',
-            42: 'assets/red_panda_Transform_the_panda__0/image_5.png',
-            50: 'assets/red_panda_Transform_the_panda__0/image_6.png',
-            58: 'assets/red_panda_Transform_the_panda__0/image_7.png',
-            67: 'assets/red_panda_Transform_the_panda__0/image_8.png',
-            75: 'assets/red_panda_Transform_the_panda__0/image_9.png',
-            83: 'assets/red_panda_Transform_the_panda__0/image_10.png',
-            92: 'assets/red_panda_Transform_the_panda__0/image_11.png',
-            100: 'assets/red_panda_Transform_the_panda__0/image_11.png'
+        'model2-sunlight': {
+            0: 'assets/model2_sunlight/image_0.png',
+            8: 'assets/model2_sunlight/image_1.png',
+            17: 'assets/model2_sunlight/image_2.png',
+            25: 'assets/model2_sunlight/image_3.png',
+            33: 'assets/model2_sunlight/image_4.png',
+            42: 'assets/model2_sunlight/image_5.png',
+            50: 'assets/model2_sunlight/image_6.png',
+            58: 'assets/model2_sunlight/image_7.png',
+            67: 'assets/model2_sunlight/image_8.png',
+            75: 'assets/model2_sunlight/image_9.png',
+            83: 'assets/model2_sunlight/image_10.png',
+            92: 'assets/model2_sunlight/image_11.png',
+            100: 'assets/model2_sunlight/image_11.png'
         },
-        'teaser-laugh': {
-            0: 'assets/teaser_model2_Make_him_laugh_0/image_0.png',
-            8: 'assets/teaser_model2_Make_him_laugh_0/image_1.png',
-            17: 'assets/teaser_model2_Make_him_laugh_0/image_2.png',
-            25: 'assets/teaser_model2_Make_him_laugh_0/image_3.png',
-            33: 'assets/teaser_model2_Make_him_laugh_0/image_4.png',
-            42: 'assets/teaser_model2_Make_him_laugh_0/image_5.png',
-            50: 'assets/teaser_model2_Make_him_laugh_0/image_6.png',
-            58: 'assets/teaser_model2_Make_him_laugh_0/image_7.png',
-            67: 'assets/teaser_model2_Make_him_laugh_0/image_8.png',
-            75: 'assets/teaser_model2_Make_him_laugh_0/image_9.png',
-            83: 'assets/teaser_model2_Make_him_laugh_0/image_10.png',
-            92: 'assets/teaser_model2_Make_him_laugh_0/image_11.png',
-            100: 'assets/teaser_model2_Make_him_laugh_0/image_11.png'
+        'model1-chubby-fat': {
+            0: 'assets/model1_chubby_and_fat/image_0.png',
+            8: 'assets/model1_chubby_and_fat/image_1.png',
+            17: 'assets/model1_chubby_and_fat/image_2.png',
+            25: 'assets/model1_chubby_and_fat/image_3.png',
+            33: 'assets/model1_chubby_and_fat/image_4.png',
+            42: 'assets/model1_chubby_and_fat/image_5.png',
+            50: 'assets/model1_chubby_and_fat/image_6.png',
+            58: 'assets/model1_chubby_and_fat/image_7.png',
+            67: 'assets/model1_chubby_and_fat/image_8.png',
+            75: 'assets/model1_chubby_and_fat/image_9.png',
+            83: 'assets/model1_chubby_and_fat/image_10.png',
+            92: 'assets/model1_chubby_and_fat/image_11.png',
+            100: 'assets/model1_chubby_and_fat/image_11.png'
         },
-        'teaser-hair': {
-            0: 'assets/teaser_model2_Tranform_his_hairs_i_1/image_0.png',
-            8: 'assets/teaser_model2_Tranform_his_hairs_i_1/image_1.png',
-            17: 'assets/teaser_model2_Tranform_his_hairs_i_1/image_2.png',
-            25: 'assets/teaser_model2_Tranform_his_hairs_i_1/image_3.png',
-            33: 'assets/teaser_model2_Tranform_his_hairs_i_1/image_4.png',
-            42: 'assets/teaser_model2_Tranform_his_hairs_i_1/image_5.png',
-            50: 'assets/teaser_model2_Tranform_his_hairs_i_1/image_6.png',
-            58: 'assets/teaser_model2_Tranform_his_hairs_i_1/image_7.png',
-            67: 'assets/teaser_model2_Tranform_his_hairs_i_1/image_8.png',
-            75: 'assets/teaser_model2_Tranform_his_hairs_i_1/image_9.png',
-            83: 'assets/teaser_model2_Tranform_his_hairs_i_1/image_10.png',
-            92: 'assets/teaser_model2_Tranform_his_hairs_i_1/image_11.png',
-            100: 'assets/teaser_model2_Tranform_his_hairs_i_1/image_11.png'
+        'panda-husky': {
+            0: 'assets/panda_indoor2_husky_dog/image_0.png',
+            8: 'assets/panda_indoor2_husky_dog/image_1.png',
+            17: 'assets/panda_indoor2_husky_dog/image_2.png',
+            25: 'assets/panda_indoor2_husky_dog/image_3.png',
+            33: 'assets/panda_indoor2_husky_dog/image_4.png',
+            42: 'assets/panda_indoor2_husky_dog/image_5.png',
+            50: 'assets/panda_indoor2_husky_dog/image_6.png',
+            58: 'assets/panda_indoor2_husky_dog/image_7.png',
+            67: 'assets/panda_indoor2_husky_dog/image_8.png',
+            75: 'assets/panda_indoor2_husky_dog/image_9.png',
+            83: 'assets/panda_indoor2_husky_dog/image_10.png',
+            92: 'assets/panda_indoor2_husky_dog/image_11.png',
+            100: 'assets/panda_indoor2_husky_dog/image_11.png'
         },
-        'woody': {
-            0: 'assets/woody_Make_him_fat_and_chu_1/image_0.png',
-            8: 'assets/woody_Make_him_fat_and_chu_1/image_1.png',
-            17: 'assets/woody_Make_him_fat_and_chu_1/image_2.png',
-            25: 'assets/woody_Make_him_fat_and_chu_1/image_3.png',
-            33: 'assets/woody_Make_him_fat_and_chu_1/image_4.png',
-            42: 'assets/woody_Make_him_fat_and_chu_1/image_5.png',
-            50: 'assets/woody_Make_him_fat_and_chu_1/image_6.png',
-            58: 'assets/woody_Make_him_fat_and_chu_1/image_7.png',
-            67: 'assets/woody_Make_him_fat_and_chu_1/image_8.png',
-            75: 'assets/woody_Make_him_fat_and_chu_1/image_9.png',
-            83: 'assets/woody_Make_him_fat_and_chu_1/image_10.png',
-            92: 'assets/woody_Make_him_fat_and_chu_1/image_11.png',
-            100: 'assets/woody_Make_him_fat_and_chu_1/image_11.png'
+        'panda-mouth-open': {
+            0: 'assets/panda_mouth_open/image_0.png',
+            8: 'assets/panda_mouth_open/image_1.png',
+            17: 'assets/panda_mouth_open/image_2.png',
+            25: 'assets/panda_mouth_open/image_3.png',
+            33: 'assets/panda_mouth_open/image_4.png',
+            42: 'assets/panda_mouth_open/image_5.png',
+            50: 'assets/panda_mouth_open/image_6.png',
+            58: 'assets/panda_mouth_open/image_7.png',
+            67: 'assets/panda_mouth_open/image_8.png',
+            75: 'assets/panda_mouth_open/image_9.png',
+            83: 'assets/panda_mouth_open/image_10.png',
+            92: 'assets/panda_mouth_open/image_11.png',
+            100: 'assets/panda_mouth_open/image_11.png'
         },
-        'person-blur-chubby': {
-            0: 'assets/person_blur_Make_her_chubby_and__0/image_0.png',
-            8: 'assets/person_blur_Make_her_chubby_and__0/image_1.png',
-            17: 'assets/person_blur_Make_her_chubby_and__0/image_2.png',
-            25: 'assets/person_blur_Make_her_chubby_and__0/image_3.png',
-            33: 'assets/person_blur_Make_her_chubby_and__0/image_4.png',
-            42: 'assets/person_blur_Make_her_chubby_and__0/image_5.png',
-            50: 'assets/person_blur_Make_her_chubby_and__0/image_6.png',
-            58: 'assets/person_blur_Make_her_chubby_and__0/image_7.png',
-            67: 'assets/person_blur_Make_her_chubby_and__0/image_8.png',
-            75: 'assets/person_blur_Make_her_chubby_and__0/image_9.png',
-            83: 'assets/person_blur_Make_her_chubby_and__0/image_10.png',
-            92: 'assets/person_blur_Make_her_chubby_and__0/image_11.png',
-            100: 'assets/person_blur_Make_her_chubby_and__0/image_11.png'
+        'person-blur-pixar': {
+            0: 'assets/person_blur_pixar/image_0.png',
+            8: 'assets/person_blur_pixar/image_1.png',
+            17: 'assets/person_blur_pixar/image_2.png',
+            25: 'assets/person_blur_pixar/image_3.png',
+            33: 'assets/person_blur_pixar/image_4.png',
+            42: 'assets/person_blur_pixar/image_5.png',
+            50: 'assets/person_blur_pixar/image_6.png',
+            58: 'assets/person_blur_pixar/image_7.png',
+            67: 'assets/person_blur_pixar/image_8.png',
+            75: 'assets/person_blur_pixar/image_9.png',
+            83: 'assets/person_blur_pixar/image_10.png',
+            92: 'assets/person_blur_pixar/image_11.png',
+            100: 'assets/person_blur_pixar/image_11.png'
         },
-        'glasses-alt': {
-            0: 'assets/glasses_img4_0/image_0.png',
-            8: 'assets/glasses_img4_0/image_1.png',
-            17: 'assets/glasses_img4_0/image_2.png',
-            25: 'assets/glasses_img4_0/image_3.png',
-            33: 'assets/glasses_img4_0/image_4.png',
-            42: 'assets/glasses_img4_0/image_5.png',
-            50: 'assets/glasses_img4_0/image_6.png',
-            58: 'assets/glasses_img4_0/image_7.png',
-            67: 'assets/glasses_img4_0/image_8.png',
-            75: 'assets/glasses_img4_0/image_9.png',
-            83: 'assets/glasses_img4_0/image_10.png',
-            92: 'assets/glasses_img4_0/image_11.png',
-            100: 'assets/glasses_img4_0/image_11.png'
+        'tibbet-autumn': {
+            0: 'assets/tibbet_autumn/image_0.png',
+            8: 'assets/tibbet_autumn/image_1.png',
+            17: 'assets/tibbet_autumn/image_2.png',
+            25: 'assets/tibbet_autumn/image_3.png',
+            33: 'assets/tibbet_autumn/image_4.png',
+            42: 'assets/tibbet_autumn/image_5.png',
+            50: 'assets/tibbet_autumn/image_6.png',
+            58: 'assets/tibbet_autumn/image_7.png',
+            67: 'assets/tibbet_autumn/image_8.png',
+            75: 'assets/tibbet_autumn/image_9.png',
+            83: 'assets/tibbet_autumn/image_10.png',
+            92: 'assets/tibbet_autumn/image_11.png',
+            100: 'assets/tibbet_autumn/image_11.png'
+        },
+        'venice-vegetation': {
+            0: 'assets/venice1_Grow_vegetation_on_t_3/image_0.png',
+            8: 'assets/venice1_Grow_vegetation_on_t_3/image_1.png',
+            17: 'assets/venice1_Grow_vegetation_on_t_3/image_2.png',
+            25: 'assets/venice1_Grow_vegetation_on_t_3/image_3.png',
+            33: 'assets/venice1_Grow_vegetation_on_t_3/image_4.png',
+            42: 'assets/venice1_Grow_vegetation_on_t_3/image_5.png',
+            50: 'assets/venice1_Grow_vegetation_on_t_3/image_6.png',
+            58: 'assets/venice1_Grow_vegetation_on_t_3/image_7.png',
+            67: 'assets/venice1_Grow_vegetation_on_t_3/image_8.png',
+            75: 'assets/venice1_Grow_vegetation_on_t_3/image_9.png',
+            83: 'assets/venice1_Grow_vegetation_on_t_3/image_10.png',
+            92: 'assets/venice1_Grow_vegetation_on_t_3/image_11.png',
+            100: 'assets/venice1_Grow_vegetation_on_t_3/image_11.png'
+        },
+        'woody-fat': {
+            0: 'assets/woody_fat_and_chubby/image_0.png',
+            8: 'assets/woody_fat_and_chubby/image_1.png',
+            17: 'assets/woody_fat_and_chubby/image_2.png',
+            25: 'assets/woody_fat_and_chubby/image_3.png',
+            33: 'assets/woody_fat_and_chubby/image_4.png',
+            42: 'assets/woody_fat_and_chubby/image_5.png',
+            50: 'assets/woody_fat_and_chubby/image_6.png',
+            58: 'assets/woody_fat_and_chubby/image_7.png',
+            67: 'assets/woody_fat_and_chubby/image_8.png',
+            75: 'assets/woody_fat_and_chubby/image_9.png',
+            83: 'assets/woody_fat_and_chubby/image_10.png',
+            92: 'assets/woody_fat_and_chubby/image_11.png',
+            100: 'assets/woody_fat_and_chubby/image_11.png'
+        },
+        'enfield-winter-snow': {
+            0: 'assets/enfield3_winter_snow/image_0.png',
+            8: 'assets/enfield3_winter_snow/image_1.png',
+            17: 'assets/enfield3_winter_snow/image_2.png',
+            25: 'assets/enfield3_winter_snow/image_3.png',
+            33: 'assets/enfield3_winter_snow/image_4.png',
+            42: 'assets/enfield3_winter_snow/image_5.png',
+            50: 'assets/enfield3_winter_snow/image_6.png',
+            58: 'assets/enfield3_winter_snow/image_7.png',
+            67: 'assets/enfield3_winter_snow/image_8.png',
+            75: 'assets/enfield3_winter_snow/image_9.png',
+            83: 'assets/enfield3_winter_snow/image_10.png',
+            92: 'assets/enfield3_winter_snow/image_11.png',
+            100: 'assets/enfield3_winter_snow/image_11.png'
         }
     };
     
-    // Setup each example slider
-    setupExampleSlider('chair-apple', 'chair-apple-slider', 'chair-apple-image', exampleMappings['chair-apple']);
-    setupExampleSlider('enfield', 'enfield-slider', 'enfield-image', exampleMappings['enfield']);
-    setupExampleSlider('model1-hair', 'model1-hair-slider', 'model1-hair-image', exampleMappings['model1-hair']);
-    setupExampleSlider('model1-chubby', 'model1-chubby-slider', 'model1-chubby-image', exampleMappings['model1-chubby']);
-    setupExampleSlider('model2-reimagine', 'model2-reimagine-slider', 'model2-reimagine-image', exampleMappings['model2-reimagine']);
-    setupExampleSlider('lamp', 'lamp-slider', 'lamp-image', exampleMappings['lamp']);
-    setupExampleSlider('red-panda', 'red-panda-slider', 'red-panda-image', exampleMappings['red-panda']);
-    setupExampleSlider('teaser-laugh', 'teaser-laugh-slider', 'teaser-laugh-image', exampleMappings['teaser-laugh']);
-    setupExampleSlider('teaser-hair', 'teaser-hair-slider', 'teaser-hair-image', exampleMappings['teaser-hair']);
-    setupExampleSlider('woody', 'woody-slider', 'woody-image', exampleMappings['woody']);
-    setupExampleSlider('person-blur-chubby', 'person-blur-chubby-slider', 'person-blur-chubby-image', exampleMappings['person-blur-chubby']);
-    setupExampleSlider('glasses-alt', 'glasses-alt-slider', 'glasses-alt-image', exampleMappings['glasses-alt']);
+    // Setup all 15 sliders
+    setupExampleSlider('jacket-leather', 'jacket-leather-slider', 'jacket-leather-image', exampleMappings['jacket-leather']);
+    setupExampleSlider('enfield-autumn', 'enfield-autumn-slider', 'enfield-autumn-image', exampleMappings['enfield-autumn']);
+    setupExampleSlider('glasses-aviator', 'glasses-aviator-slider', 'glasses-aviator-image', exampleMappings['glasses-aviator']);
+    setupExampleSlider('lamp-yellow', 'lamp-yellow-slider', 'lamp-yellow-image', exampleMappings['lamp-yellow']);
+    setupExampleSlider('man-fur-jacket-bike', 'man-fur-jacket-bike-slider', 'man-fur-jacket-bike-image', exampleMappings['man-fur-jacket-bike']);
+    setupExampleSlider('model-long-hair', 'model-long-hair-slider', 'model-long-hair-image', exampleMappings['model-long-hair']);
+    setupExampleSlider('model2-sunlight', 'model2-sunlight-slider', 'model2-sunlight-image', exampleMappings['model2-sunlight']);
+    setupExampleSlider('model1-chubby-fat', 'model1-chubby-fat-slider', 'model1-chubby-fat-image', exampleMappings['model1-chubby-fat']);
+    setupExampleSlider('panda-husky', 'panda-husky-slider', 'panda-husky-image', exampleMappings['panda-husky']);
+    setupExampleSlider('panda-mouth-open', 'panda-mouth-open-slider', 'panda-mouth-open-image', exampleMappings['panda-mouth-open']);
+    setupExampleSlider('person-blur-pixar', 'person-blur-pixar-slider', 'person-blur-pixar-image', exampleMappings['person-blur-pixar']);
+    setupExampleSlider('tibbet-autumn', 'tibbet-autumn-slider', 'tibbet-autumn-image', exampleMappings['tibbet-autumn']);
+    setupExampleSlider('venice-vegetation', 'venice-vegetation-slider', 'venice-vegetation-image', exampleMappings['venice-vegetation']);
+    setupExampleSlider('woody-fat', 'woody-fat-slider', 'woody-fat-image', exampleMappings['woody-fat']);
+    setupExampleSlider('enfield-winter-snow', 'enfield-winter-snow-slider', 'enfield-winter-snow-image', exampleMappings['enfield-winter-snow']);
 });
+
+// Copy BibTeX function
+function copyBibTeX() {
+    const bibtexText = document.querySelector('.bibtex-code').textContent;
+    
+    if (navigator.clipboard && window.isSecureContext) {
+        // Use the modern clipboard API
+        navigator.clipboard.writeText(bibtexText).then(() => {
+            showCopyFeedback();
+        }).catch(() => {
+            fallbackCopyToClipboard(bibtexText);
+        });
+    } else {
+        // Fallback for older browsers
+        fallbackCopyToClipboard(bibtexText);
+    }
+}
+
+function fallbackCopyToClipboard(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    textArea.style.top = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+        document.execCommand('copy');
+        showCopyFeedback();
+    } catch (err) {
+        console.error('Failed to copy text: ', err);
+    }
+    
+    document.body.removeChild(textArea);
+}
+
+function showCopyFeedback() {
+    const button = document.querySelector('.copy-bibtex-btn');
+    const originalText = button.textContent;
+    
+    button.textContent = 'Copied!';
+    button.style.background = '#27ae60';
+    
+    setTimeout(() => {
+        button.textContent = originalText;
+        button.style.background = '#3498db';
+    }, 2000);
+}
 
 function setupExampleSlider(type, sliderId, imageId, imageMapping) {
     const slider = document.getElementById(sliderId);
