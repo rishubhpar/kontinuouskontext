@@ -29,7 +29,7 @@
                     
                     <!-- Authors directly below title -->
                     <div class="header-authors">
-                        <span class="header-author"><a href="https://rishubhparihar.github.io/" style="color: inherit; text-decoration: none;">Rishubh Parihar</a></span>
+                        <span class="header-author"><a href="https://rishubhpar.github.io/" style="color: inherit; text-decoration: none;">Rishubh Parihar</a></span>
                         <span class="header-author"><a href="https://orpatashnik.github.io/" style="color: inherit; text-decoration: none;">Or Patashnik</a></span>
                         <span class="header-author">Daniil Ostashev</span>
                         <span class="header-author"><a href="https://cds.iisc.ac.in/faculty/venky/" style="color: inherit; text-decoration: none;">R Venkatesh Babu</a></span>
@@ -79,7 +79,7 @@
                         
                         <!-- Result display -->
                         <div class="edit-result" id="edit-result">
-                            <img id="result-image" src="assets/aesthetic_model3/image_0.png" alt="Edited Result" class="result-img">
+                            <img id="result-image" src="assets/aesthetic_gold_dress/row_00_col_00.png" alt="Edited Result" class="result-img">
                         </div>
                     </div>
                 </div>
@@ -113,54 +113,54 @@
         <section class="interactive-examples">
             <h2>Strength Controlled Image Editing</h2>
             <div class="examples-grid">
-                <!-- Example 1: Style Transfer -->
+                <!-- Example 1: Horse to Unicorn -->
                 <div class="example-tile">
                     <div class="example-instruction">
-                        "Transform the eyeglasses into a pair of aviator sunglasses"
+                        'Transform the scene into studio Ghibli style animation'
                     </div>
                     <div class="example-slider-container">
                         <div class="slider-container">
                             <span class="strength-label">0.0</span>
-                            <input type="range" id="style-slider" class="strength-slider" min="0" max="100" value="0" step="1">
+                            <input type="range" id="horse-uncle-slider" class="strength-slider" min="0" max="100" value="0" step="1">
                             <span class="strength-label">1.0</span>
                         </div>
                     </div>
                     <div class="example-result">
-                        <img id="style-image" src="assets/horse_uncle/image_0.png" alt="Style Transfer Result" class="result-img">
+                        <img id="horse-uncle-image" src="assets/horse_uncle/image_0.png" alt="Horse to Unicorn Result" class="result-img">
                     </div>
                 </div>
 
-                <!-- Example 2: Object Modification -->
+                <!-- Example 2: Resize the car -->
                 <div class="example-tile">
                     <div class="example-instruction">
-                        "Reduce the size of the object"
+                        'Reduce the size of the object'
                     </div>
                     <div class="example-slider-container">
                         <div class="slider-container">
                             <span class="strength-label">0.0</span>
-                            <input type="range" id="color-slider" class="strength-slider" min="0" max="100" value="0" step="1">
+                            <input type="range" id="car-resize-slider" class="strength-slider" min="0" max="100" value="0" step="1">
                             <span class="strength-label">1.0</span>
                         </div>
                     </div>
                     <div class="example-result">
-                        <img id="color-image" src="assets/man_jacket/image_0.png" alt="Color Change Result" class="result-img">
+                        <img id="car-resize-image" src="assets/car_resize/row_00_col_00.png" alt="Resize Car Result" class="result-img">
                     </div>
                 </div>
 
-                <!-- Example 3: Background Change -->
+                <!-- Example 3: Change hair to red -->
                 <div class="example-tile">
                     <div class="example-instruction">
-                        "Reduce the size of the object"
+                        'Change her hair to be curly and red'
                     </div>
                     <div class="example-slider-container">
                         <div class="slider-container">
                             <span class="strength-label">0.0</span>
-                            <input type="range" id="background-slider" class="strength-slider" min="0" max="100" value="0" step="1">
+                            <input type="range" id="person-blur-red-hairs-slider" class="strength-slider" min="0" max="100" value="0" step="1">
                             <span class="strength-label">1.0</span>
                         </div>
                     </div>
                     <div class="example-result">
-                        <img id="background-image" src="assets/person_blur/image_0.png" alt="Background Change Result" class="result-img">
+                        <img id="person-blur-red-hairs-image" src="assets/person_blur_red_hairs/image_0.png" alt="Red Hair Result" class="result-img">
                     </div>
                 </div>
             </div>
@@ -247,226 +247,282 @@
             </div>
         </section>
 
-        <!-- Interactive Examples Section -->
+        <!-- Results Section 1 -->
         <section class="interactive-examples">
             <h2>Results</h2>
             <div class="examples-grid">
-                <!-- Example 1: Transform the floor -->
+                <!-- Result 0: Leather Jacket -->
                 <div class="example-tile">
                     <div class="example-instruction">
-                        "Transform the floor"
+                        "Transform his jacket to a leather jacket"
                     </div>
                     <div class="example-slider-container">
                         <div class="slider-container">
                             <span class="strength-label">0.0</span>
-                            <input type="range" id="chair-apple-slider" class="strength-slider" min="0" max="100" value="0" step="1">
+                            <input type="range" id="jacket-leather-slider" class="strength-slider" min="0" max="100" value="0" step="1">
                             <span class="strength-label">1.0</span>
                         </div>
                     </div>
                     <div class="example-result">
-                        <img id="chair-apple-image" src="assets/chair_apple_Transform_the_floor__1/image_0.png" alt="Transform Floor Result" class="result-img">
+                        <img id="jacket-leather-image" src="assets/jacket_leather/image_0.png" alt="Leather Jacket Result" class="result-img">
                     </div>
                 </div>
 
-                <!-- Example 2: Transform the scene -->
+                <!-- Result 1: Autumn Scene -->
                 <div class="example-tile">
                     <div class="example-instruction">
-                        "Transform the scene"
+                        "Transform to autumn scene"
                     </div>
                     <div class="example-slider-container">
                         <div class="slider-container">
                             <span class="strength-label">0.0</span>
-                            <input type="range" id="enfield-slider" class="strength-slider" min="0" max="100" value="0" step="1">
+                            <input type="range" id="enfield-autumn-slider" class="strength-slider" min="0" max="100" value="0" step="1">
                             <span class="strength-label">1.0</span>
                         </div>
                     </div>
                     <div class="example-result">
-                        <img id="enfield-image" src="assets/enfield3_Transform_the_scene__0/image_0.png" alt="Transform Scene Result" class="result-img">
+                        <img id="enfield-autumn-image" src="assets/enfield3_autumn/image_0.png" alt="Autumn Scene Result" class="result-img">
                     </div>
                 </div>
 
-                <!-- Example 3: Grow her hairs -->
+                <!-- Result 2: Aviator Glasses -->
                 <div class="example-tile">
                     <div class="example-instruction">
-                        "Grow her hairs to be longer"
+                        "Transform the eyeglasses into a pair of aviator sunglasses"
                     </div>
                     <div class="example-slider-container">
                         <div class="slider-container">
                             <span class="strength-label">0.0</span>
-                            <input type="range" id="model1-hair-slider" class="strength-slider" min="0" max="100" value="0" step="1">
+                            <input type="range" id="glasses-aviator-slider" class="strength-slider" min="0" max="100" value="0" step="1">
                             <span class="strength-label">1.0</span>
                         </div>
                     </div>
                     <div class="example-result">
-                        <img id="model1-hair-image" src="assets/model1_boot_Grow_her_hairs_to_be_0/image_0.png" alt="Grow Hair Result" class="result-img">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Additional Interactive Examples Section -->
-        <section class="interactive-examples">
-            <div class="examples-grid">
-                <!-- Example 4: Make her chubby -->
-                <div class="example-tile">
-                    <div class="example-instruction">
-                        "Make her chubby and cute"
-                    </div>
-                    <div class="example-slider-container">
-                        <div class="slider-container">
-                            <span class="strength-label">0.0</span>
-                            <input type="range" id="model1-chubby-slider" class="strength-slider" min="0" max="100" value="0" step="1">
-                            <span class="strength-label">1.0</span>
-                        </div>
-                    </div>
-                    <div class="example-result">
-                        <img id="model1-chubby-image" src="assets/model1_boot_Make_her_chubby_and__1/image_0.png" alt="Make Chubby Result" class="result-img">
-                    </div>
-                </div>
-
-                <!-- Example 5: Reimagine the scene -->
-                <div class="example-tile">
-                    <div class="example-instruction">
-                        "Reimagine the scene"
-                    </div>
-                    <div class="example-slider-container">
-                        <div class="slider-container">
-                            <span class="strength-label">0.0</span>
-                            <input type="range" id="model2-reimagine-slider" class="strength-slider" min="0" max="100" value="0" step="1">
-                            <span class="strength-label">1.0</span>
-                        </div>
-                    </div>
-                    <div class="example-result">
-                        <img id="model2-reimagine-image" src="assets/model2_Reimagine_the_scene__1/image_0.png" alt="Reimagine Scene Result" class="result-img">
-                    </div>
-                </div>
-
-                <!-- Example 6: Turn on the hanging light -->
-                <div class="example-tile">
-                    <div class="example-instruction">
-                        "Turn on the hanging light"
-                    </div>
-                    <div class="example-slider-container">
-                        <div class="slider-container">
-                            <span class="strength-label">0.0</span>
-                            <input type="range" id="lamp-slider" class="strength-slider" min="0" max="100" value="0" step="1">
-                            <span class="strength-label">1.0</span>
-                        </div>
-                    </div>
-                    <div class="example-result">
-                        <img id="lamp-image" src="assets/no_lamp_Turn_on_the_hanging__2/image_0.png" alt="Turn On Light Result" class="result-img">
+                        <img id="glasses-aviator-image" src="assets/glasses_aviator/image_0.png" alt="Aviator Glasses Result" class="result-img">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Third Interactive Examples Section -->
+        <!-- Results Section 2 -->
         <section class="interactive-examples">
             <div class="examples-grid">
-                <!-- Example 7: Transform the panda -->
+                <!-- Result 3: Yellow Lamp -->
                 <div class="example-tile">
                     <div class="example-instruction">
-                        "Transform the panda"
+                        "Turn on yellow lamp light"
                     </div>
                     <div class="example-slider-container">
                         <div class="slider-container">
                             <span class="strength-label">0.0</span>
-                            <input type="range" id="red-panda-slider" class="strength-slider" min="0" max="100" value="0" step="1">
+                            <input type="range" id="lamp-yellow-slider" class="strength-slider" min="0" max="100" value="0" step="1">
                             <span class="strength-label">1.0</span>
                         </div>
                     </div>
                     <div class="example-result">
-                        <img id="red-panda-image" src="assets/red_panda_Transform_the_panda__0/image_0.png" alt="Transform Panda Result" class="result-img">
+                        <img id="lamp-yellow-image" src="assets/lamp_yellow/image_0.png" alt="Yellow Lamp Result" class="result-img">
                     </div>
                 </div>
 
-                <!-- Example 8: Make him laugh -->
+                <!-- Result 4: Fur Jacket on Bike -->
                 <div class="example-tile">
                     <div class="example-instruction">
-                        "Make him laugh"
+                        "Add fur jacket to man on bike"
                     </div>
                     <div class="example-slider-container">
                         <div class="slider-container">
                             <span class="strength-label">0.0</span>
-                            <input type="range" id="teaser-laugh-slider" class="strength-slider" min="0" max="100" value="0" step="1">
+                            <input type="range" id="man-fur-jacket-bike-slider" class="strength-slider" min="0" max="100" value="0" step="1">
                             <span class="strength-label">1.0</span>
                         </div>
                     </div>
                     <div class="example-result">
-                        <img id="teaser-laugh-image" src="assets/teaser_model2_Make_him_laugh_0/image_0.png" alt="Make Laugh Result" class="result-img">
+                        <img id="man-fur-jacket-bike-image" src="assets/man_fur_jacket_bike/image_0.png" alt="Fur Jacket Bike Result" class="result-img">
                     </div>
                 </div>
 
-                <!-- Example 9: Transform his hairs -->
+                <!-- Result 5: Long Hair -->
                 <div class="example-tile">
                     <div class="example-instruction">
-                        "Transform his hairs into curly"
+                        "Grow long hair"
                     </div>
                     <div class="example-slider-container">
                         <div class="slider-container">
                             <span class="strength-label">0.0</span>
-                            <input type="range" id="teaser-hair-slider" class="strength-slider" min="0" max="100" value="0" step="1">
+                            <input type="range" id="model-long-hair-slider" class="strength-slider" min="0" max="100" value="0" step="1">
                             <span class="strength-label">1.0</span>
                         </div>
                     </div>
                     <div class="example-result">
-                        <img id="teaser-hair-image" src="assets/teaser_model2_Tranform_his_hairs_i_1/image_0.png" alt="Transform Hair Result" class="result-img">
+                        <img id="model-long-hair-image" src="assets/model_long_hair/image_0.png" alt="Long Hair Result" class="result-img">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Fourth Interactive Examples Section -->
+        <!-- Results Section 3 -->
         <section class="interactive-examples">
             <div class="examples-grid">
-                <!-- Example 10: Make him fat and chubby -->
+                <!-- Result 6: Sunlight -->
                 <div class="example-tile">
                     <div class="example-instruction">
-                        "Make him fat and chubby"
+                        "Add bright sunlight"
                     </div>
                     <div class="example-slider-container">
                         <div class="slider-container">
                             <span class="strength-label">0.0</span>
-                            <input type="range" id="woody-slider" class="strength-slider" min="0" max="100" value="0" step="1">
+                            <input type="range" id="model2-sunlight-slider" class="strength-slider" min="0" max="100" value="0" step="1">
                             <span class="strength-label">1.0</span>
                         </div>
                     </div>
                     <div class="example-result">
-                        <img id="woody-image" src="assets/woody_Make_him_fat_and_chu_1/image_0.png" alt="Make Fat Result" class="result-img">
+                        <img id="model2-sunlight-image" src="assets/model2_sunlight/image_0.png" alt="Sunlight Result" class="result-img">
                     </div>
                 </div>
 
-                <!-- Example 11: Make her chubby (person blur) -->
+                <!-- Result 7: Chubby and Fat -->
                 <div class="example-tile">
                     <div class="example-instruction">
-                        "Make her chubby and cute"
+                        "Make her chubby and fat"
                     </div>
                     <div class="example-slider-container">
                         <div class="slider-container">
                             <span class="strength-label">0.0</span>
-                            <input type="range" id="person-blur-chubby-slider" class="strength-slider" min="0" max="100" value="0" step="1">
+                            <input type="range" id="model1-chubby-fat-slider" class="strength-slider" min="0" max="100" value="0" step="1">
                             <span class="strength-label">1.0</span>
                         </div>
                     </div>
                     <div class="example-result">
-                        <img id="person-blur-chubby-image" src="assets/person_blur_Make_her_chubby_and__0/image_0.png" alt="Make Chubby Result" class="result-img">
+                        <img id="model1-chubby-fat-image" src="assets/model1_chubby_and_fat/image_0.png" alt="Chubby Fat Result" class="result-img">
                     </div>
                 </div>
 
-                <!-- Example 12: Add glasses (alternative) -->
+                <!-- Result 8: Panda to Husky -->
                 <div class="example-tile">
                     <div class="example-instruction">
-                        "Add glasses to the person"
+                        "Transform panda to husky dog"
                     </div>
                     <div class="example-slider-container">
                         <div class="slider-container">
                             <span class="strength-label">0.0</span>
-                            <input type="range" id="glasses-alt-slider" class="strength-slider" min="0" max="100" value="0" step="1">
+                            <input type="range" id="panda-husky-slider" class="strength-slider" min="0" max="100" value="0" step="1">
                             <span class="strength-label">1.0</span>
                         </div>
                     </div>
                     <div class="example-result">
-                        <img id="glasses-alt-image" src="assets/glasses_img4_0/image_0.png" alt="Add Glasses Alt Result" class="result-img">
+                        <img id="panda-husky-image" src="assets/panda_indoor2_husky_dog/image_0.png" alt="Panda Husky Result" class="result-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section 4 -->
+        <section class="interactive-examples">
+            <div class="examples-grid">
+                <!-- Result 9: Panda Mouth Open -->
+                <div class="example-tile">
+                    <div class="example-instruction">
+                        "Open panda's mouth"
+                    </div>
+                    <div class="example-slider-container">
+                        <div class="slider-container">
+                            <span class="strength-label">0.0</span>
+                            <input type="range" id="panda-mouth-open-slider" class="strength-slider" min="0" max="100" value="0" step="1">
+                            <span class="strength-label">1.0</span>
+                        </div>
+                    </div>
+                    <div class="example-result">
+                        <img id="panda-mouth-open-image" src="assets/panda_mouth_open/image_0.png" alt="Panda Mouth Open Result" class="result-img">
+                    </div>
+                </div>
+
+                <!-- Result 10: Pixar Style -->
+                <div class="example-tile">
+                    <div class="example-instruction">
+                        "Transform to Pixar style"
+                    </div>
+                    <div class="example-slider-container">
+                        <div class="slider-container">
+                            <span class="strength-label">0.0</span>
+                            <input type="range" id="person-blur-pixar-slider" class="strength-slider" min="0" max="100" value="0" step="1">
+                            <span class="strength-label">1.0</span>
+                        </div>
+                    </div>
+                    <div class="example-result">
+                        <img id="person-blur-pixar-image" src="assets/person_blur_pixar/image_0.png" alt="Pixar Style Result" class="result-img">
+                    </div>
+                </div>
+
+                <!-- Result 11: Tibet Autumn -->
+                <div class="example-tile">
+                    <div class="example-instruction">
+                        "Transform to Tibet autumn"
+                    </div>
+                    <div class="example-slider-container">
+                        <div class="slider-container">
+                            <span class="strength-label">0.0</span>
+                            <input type="range" id="tibbet-autumn-slider" class="strength-slider" min="0" max="100" value="0" step="1">
+                            <span class="strength-label">1.0</span>
+                        </div>
+                    </div>
+                    <div class="example-result">
+                        <img id="tibbet-autumn-image" src="assets/tibbet_autumn/image_0.png" alt="Tibet Autumn Result" class="result-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section 5 -->
+        <section class="interactive-examples">
+            <div class="examples-grid">
+                <!-- Result 12: Venice Vegetation -->
+                <div class="example-tile">
+                    <div class="example-instruction">
+                        "Grow vegetation on buildings"
+                    </div>
+                    <div class="example-slider-container">
+                        <div class="slider-container">
+                            <span class="strength-label">0.0</span>
+                            <input type="range" id="venice-vegetation-slider" class="strength-slider" min="0" max="100" value="0" step="1">
+                            <span class="strength-label">1.0</span>
+                        </div>
+                    </div>
+                    <div class="example-result">
+                        <img id="venice-vegetation-image" src="assets/venice1_Grow_vegetation_on_t_3/image_0.png" alt="Venice Vegetation Result" class="result-img">
+                    </div>
+                </div>
+
+                <!-- Result 13: Woody Fat -->
+                <div class="example-tile">
+                    <div class="example-instruction">
+                        "Make Woody fat and chubby"
+                    </div>
+                    <div class="example-slider-container">
+                        <div class="slider-container">
+                            <span class="strength-label">0.0</span>
+                            <input type="range" id="woody-fat-slider" class="strength-slider" min="0" max="100" value="0" step="1">
+                            <span class="strength-label">1.0</span>
+                        </div>
+                    </div>
+                    <div class="example-result">
+                        <img id="woody-fat-image" src="assets/woody_fat_and_chubby/image_0.png" alt="Woody Fat Result" class="result-img">
+                    </div>
+                </div>
+
+                <!-- Result 14: Winter Snow -->
+                <div class="example-tile">
+                    <div class="example-instruction">
+                        "Transform to winter snow scene"
+                    </div>
+                    <div class="example-slider-container">
+                        <div class="slider-container">
+                            <span class="strength-label">0.0</span>
+                            <input type="range" id="enfield-winter-snow-slider" class="strength-slider" min="0" max="100" value="0" step="1">
+                            <span class="strength-label">1.0</span>
+                        </div>
+                    </div>
+                    <div class="example-result">
+                        <img id="enfield-winter-snow-image" src="assets/enfield3_winter_snow/image_0.png" alt="Winter Snow Result" class="result-img">
                     </div>
                 </div>
             </div>
