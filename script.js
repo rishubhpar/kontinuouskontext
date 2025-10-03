@@ -202,9 +202,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     this.style.opacity = '1';
                 };
                 
-                // Handle image error (fallback to first image)
+                // Handle image error (fallback to first teaser image)
                 resultImage.onerror = function() {
-                    this.src = 'assets/aesthetic_gold_dress/row_00_col_00.png';
+                    this.src = 'assets/teaser/row_00_col_00.png';
                     this.style.opacity = '1';
                 };
             }
@@ -319,19 +319,6 @@ function preloadExampleImages() {
         'assets/jacket_leather/image_9.png',
         'assets/jacket_leather/image_10.png',
         'assets/jacket_leather/image_11.png',
-        // Enfield3 Autumn images (12 images)
-        'assets/enfield3_autumn/image_0.png',
-        'assets/enfield3_autumn/image_1.png',
-        'assets/enfield3_autumn/image_2.png',
-        'assets/enfield3_autumn/image_3.png',
-        'assets/enfield3_autumn/image_4.png',
-        'assets/enfield3_autumn/image_5.png',
-        'assets/enfield3_autumn/image_6.png',
-        'assets/enfield3_autumn/image_7.png',
-        'assets/enfield3_autumn/image_8.png',
-        'assets/enfield3_autumn/image_9.png',
-        'assets/enfield3_autumn/image_10.png',
-        'assets/enfield3_autumn/image_11.png',
         // Glasses Aviator images (12 images)
         'assets/glasses_aviator/image_0.png',
         'assets/glasses_aviator/image_1.png',
@@ -367,19 +354,6 @@ function preloadExampleImages() {
         'assets/man_fur_jacket_bike/image_6.png',
         'assets/man_fur_jacket_bike/image_7.png',
         'assets/man_fur_jacket_bike/image_8.png',
-        // Model Long Hair images (12 images)
-        'assets/model_long_hair/image_0.png',
-        'assets/model_long_hair/image_1.png',
-        'assets/model_long_hair/image_2.png',
-        'assets/model_long_hair/image_3.png',
-        'assets/model_long_hair/image_4.png',
-        'assets/model_long_hair/image_5.png',
-        'assets/model_long_hair/image_6.png',
-        'assets/model_long_hair/image_7.png',
-        'assets/model_long_hair/image_8.png',
-        'assets/model_long_hair/image_9.png',
-        'assets/model_long_hair/image_10.png',
-        'assets/model_long_hair/image_11.png',
         // Model2 Sunlight images (12 images)
         'assets/model2_sunlight/image_0.png',
         'assets/model2_sunlight/image_1.png',
@@ -419,19 +393,6 @@ function preloadExampleImages() {
         'assets/panda_indoor2_husky_dog/image_9.png',
         'assets/panda_indoor2_husky_dog/image_10.png',
         'assets/panda_indoor2_husky_dog/image_11.png',
-        // Panda Mouth Open images (12 images)
-        'assets/panda_mouth_open/image_0.png',
-        'assets/panda_mouth_open/image_1.png',
-        'assets/panda_mouth_open/image_2.png',
-        'assets/panda_mouth_open/image_3.png',
-        'assets/panda_mouth_open/image_4.png',
-        'assets/panda_mouth_open/image_5.png',
-        'assets/panda_mouth_open/image_6.png',
-        'assets/panda_mouth_open/image_7.png',
-        'assets/panda_mouth_open/image_8.png',
-        'assets/panda_mouth_open/image_9.png',
-        'assets/panda_mouth_open/image_10.png',
-        'assets/panda_mouth_open/image_11.png',
         // Person Blur Pixar images (12 images)
         'assets/person_blur_pixar/image_0.png',
         'assets/person_blur_pixar/image_1.png',
@@ -775,21 +736,6 @@ document.addEventListener('DOMContentLoaded', function() {
             92: 'assets/jacket_leather/image_11.png',
             100: 'assets/jacket_leather/image_11.png'
         },
-        'enfield-autumn': {
-            0: 'assets/enfield3_autumn/image_0.png',
-            8: 'assets/enfield3_autumn/image_1.png',
-            17: 'assets/enfield3_autumn/image_2.png',
-            25: 'assets/enfield3_autumn/image_3.png',
-            33: 'assets/enfield3_autumn/image_4.png',
-            42: 'assets/enfield3_autumn/image_5.png',
-            50: 'assets/enfield3_autumn/image_6.png',
-            58: 'assets/enfield3_autumn/image_7.png',
-            67: 'assets/enfield3_autumn/image_8.png',
-            75: 'assets/enfield3_autumn/image_9.png',
-            83: 'assets/enfield3_autumn/image_10.png',
-            92: 'assets/enfield3_autumn/image_11.png',
-            100: 'assets/enfield3_autumn/image_11.png'
-        },
         'glasses-aviator': {
             0: 'assets/glasses_aviator/image_0.png',
             8: 'assets/glasses_aviator/image_1.png',
@@ -829,21 +775,6 @@ document.addEventListener('DOMContentLoaded', function() {
             75: 'assets/man_fur_jacket_bike/image_6.png',
             87: 'assets/man_fur_jacket_bike/image_7.png',
             100: 'assets/man_fur_jacket_bike/image_8.png'
-        },
-        'model-long-hair': {
-            0: 'assets/model_long_hair/image_0.png',
-            8: 'assets/model_long_hair/image_1.png',
-            17: 'assets/model_long_hair/image_2.png',
-            25: 'assets/model_long_hair/image_3.png',
-            33: 'assets/model_long_hair/image_4.png',
-            42: 'assets/model_long_hair/image_5.png',
-            50: 'assets/model_long_hair/image_6.png',
-            58: 'assets/model_long_hair/image_7.png',
-            67: 'assets/model_long_hair/image_8.png',
-            75: 'assets/model_long_hair/image_9.png',
-            83: 'assets/model_long_hair/image_10.png',
-            92: 'assets/model_long_hair/image_11.png',
-            100: 'assets/model_long_hair/image_11.png'
         },
         'model2-sunlight': {
             0: 'assets/model2_sunlight/image_0.png',
@@ -889,21 +820,6 @@ document.addEventListener('DOMContentLoaded', function() {
             83: 'assets/panda_indoor2_husky_dog/image_10.png',
             92: 'assets/panda_indoor2_husky_dog/image_11.png',
             100: 'assets/panda_indoor2_husky_dog/image_11.png'
-        },
-        'panda-mouth-open': {
-            0: 'assets/panda_mouth_open/image_0.png',
-            8: 'assets/panda_mouth_open/image_1.png',
-            17: 'assets/panda_mouth_open/image_2.png',
-            25: 'assets/panda_mouth_open/image_3.png',
-            33: 'assets/panda_mouth_open/image_4.png',
-            42: 'assets/panda_mouth_open/image_5.png',
-            50: 'assets/panda_mouth_open/image_6.png',
-            58: 'assets/panda_mouth_open/image_7.png',
-            67: 'assets/panda_mouth_open/image_8.png',
-            75: 'assets/panda_mouth_open/image_9.png',
-            83: 'assets/panda_mouth_open/image_10.png',
-            92: 'assets/panda_mouth_open/image_11.png',
-            100: 'assets/panda_mouth_open/image_11.png'
         },
         'person-blur-pixar': {
             0: 'assets/person_blur_pixar/image_0.png',
@@ -984,15 +900,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Setup all 15 sliders
     setupExampleSlider('jacket-leather', 'jacket-leather-slider', 'jacket-leather-image', exampleMappings['jacket-leather']);
-    setupExampleSlider('enfield-autumn', 'enfield-autumn-slider', 'enfield-autumn-image', exampleMappings['enfield-autumn']);
     setupExampleSlider('glasses-aviator', 'glasses-aviator-slider', 'glasses-aviator-image', exampleMappings['glasses-aviator']);
     setupExampleSlider('lamp-yellow', 'lamp-yellow-slider', 'lamp-yellow-image', exampleMappings['lamp-yellow']);
     setupExampleSlider('man-fur-jacket-bike', 'man-fur-jacket-bike-slider', 'man-fur-jacket-bike-image', exampleMappings['man-fur-jacket-bike']);
-    setupExampleSlider('model-long-hair', 'model-long-hair-slider', 'model-long-hair-image', exampleMappings['model-long-hair']);
     setupExampleSlider('model2-sunlight', 'model2-sunlight-slider', 'model2-sunlight-image', exampleMappings['model2-sunlight']);
     setupExampleSlider('model1-chubby-fat', 'model1-chubby-fat-slider', 'model1-chubby-fat-image', exampleMappings['model1-chubby-fat']);
     setupExampleSlider('panda-husky', 'panda-husky-slider', 'panda-husky-image', exampleMappings['panda-husky']);
-    setupExampleSlider('panda-mouth-open', 'panda-mouth-open-slider', 'panda-mouth-open-image', exampleMappings['panda-mouth-open']);
     setupExampleSlider('person-blur-pixar', 'person-blur-pixar-slider', 'person-blur-pixar-image', exampleMappings['person-blur-pixar']);
     setupExampleSlider('tibbet-autumn', 'tibbet-autumn-slider', 'tibbet-autumn-image', exampleMappings['tibbet-autumn']);
     setupExampleSlider('venice-vegetation', 'venice-vegetation-slider', 'venice-vegetation-image', exampleMappings['venice-vegetation']);
