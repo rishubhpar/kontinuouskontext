@@ -141,34 +141,58 @@ document.addEventListener('DOMContentLoaded', function() {
     const strengthSlider = document.getElementById('strength-slider');
     const resultImage = document.getElementById('result-image');
     
-    // Define the mapping of slider values to pre-saved images from aesthetic_gold_dress folder
+    // Define the mapping of slider values to pre-saved images from aesthetic_model2_teaser_pixar folder
     const imageMapping = {
         0: {
-            src: 'assets/aesthetic_gold_dress/row_00_col_00.png',
+            src: 'assets/aesthetic_model2_teaser_pixar/image_0.png',
             caption: 'Original image (0.0 edit strength)'
         },
+        8: {
+            src: 'assets/aesthetic_model2_teaser_pixar/image_1.png',
+            caption: 'Light editing effect (0.08 edit strength)'
+        },
         17: {
-            src: 'assets/aesthetic_gold_dress/row_00_col_01.png',
+            src: 'assets/aesthetic_model2_teaser_pixar/image_2.png',
             caption: 'Light editing effect (0.17 edit strength)'
         },
+        25: {
+            src: 'assets/aesthetic_model2_teaser_pixar/image_3.png',
+            caption: 'Moderate editing effect (0.25 edit strength)'
+        },
         33: {
-            src: 'assets/aesthetic_gold_dress/row_00_col_02.png',
+            src: 'assets/aesthetic_model2_teaser_pixar/image_4.png',
             caption: 'Moderate editing effect (0.33 edit strength)'
         },
+        42: {
+            src: 'assets/aesthetic_model2_teaser_pixar/image_5.png',
+            caption: 'Balanced editing effect (0.42 edit strength)'
+        },
         50: {
-            src: 'assets/aesthetic_gold_dress/row_00_col_03.png',
+            src: 'assets/aesthetic_model2_teaser_pixar/image_6.png',
             caption: 'Balanced editing effect (0.5 edit strength)'
         },
+        58: {
+            src: 'assets/aesthetic_model2_teaser_pixar/image_7.png',
+            caption: 'Strong editing effect (0.58 edit strength)'
+        },
         67: {
-            src: 'assets/aesthetic_gold_dress/row_00_col_04.png',
+            src: 'assets/aesthetic_model2_teaser_pixar/image_8.png',
             caption: 'Strong editing effect (0.67 edit strength)'
         },
+        75: {
+            src: 'assets/aesthetic_model2_teaser_pixar/image_9.png',
+            caption: 'Very strong editing effect (0.75 edit strength)'
+        },
         83: {
-            src: 'assets/aesthetic_gold_dress/row_00_col_05.png',
+            src: 'assets/aesthetic_model2_teaser_pixar/image_10.png',
             caption: 'Very strong editing effect (0.83 edit strength)'
         },
+        92: {
+            src: 'assets/aesthetic_model2_teaser_pixar/image_11.png',
+            caption: 'Near maximum editing effect (0.92 edit strength)'
+        },
         100: {
-            src: 'assets/aesthetic_gold_dress/row_00_col_06.png',
+            src: 'assets/aesthetic_model2_teaser_pixar/image_11.png',
             caption: 'Maximum editing effect (1.0 edit strength)'
         }
     };
@@ -237,13 +261,18 @@ function updateImageMapping(customMapping) {
 // Function to preload all images for smooth transitions
 function preloadImages() {
     const imagePaths = [
-        'assets/aesthetic_gold_dress/row_00_col_00.png',
-        'assets/aesthetic_gold_dress/row_00_col_01.png',
-        'assets/aesthetic_gold_dress/row_00_col_02.png',
-        'assets/aesthetic_gold_dress/row_00_col_03.png',
-        'assets/aesthetic_gold_dress/row_00_col_04.png',
-        'assets/aesthetic_gold_dress/row_00_col_05.png',
-        'assets/aesthetic_gold_dress/row_00_col_06.png'
+        'assets/aesthetic_model2_teaser_pixar/image_0.png',
+        'assets/aesthetic_model2_teaser_pixar/image_1.png',
+        'assets/aesthetic_model2_teaser_pixar/image_2.png',
+        'assets/aesthetic_model2_teaser_pixar/image_3.png',
+        'assets/aesthetic_model2_teaser_pixar/image_4.png',
+        'assets/aesthetic_model2_teaser_pixar/image_5.png',
+        'assets/aesthetic_model2_teaser_pixar/image_6.png',
+        'assets/aesthetic_model2_teaser_pixar/image_7.png',
+        'assets/aesthetic_model2_teaser_pixar/image_8.png',
+        'assets/aesthetic_model2_teaser_pixar/image_9.png',
+        'assets/aesthetic_model2_teaser_pixar/image_10.png',
+        'assets/aesthetic_model2_teaser_pixar/image_11.png'
     ];
     
     imagePaths.forEach(src => {
@@ -274,14 +303,19 @@ function preloadStrengthControlledImages() {
         'assets/horse_uncle/image_9.png',
         'assets/horse_uncle/image_10.png',
         'assets/horse_uncle/image_11.png',
-        // Car resize images (7 images)
-        'assets/car_resize/row_00_col_00.png',
-        'assets/car_resize/row_00_col_01.png',
-        'assets/car_resize/row_00_col_02.png',
-        'assets/car_resize/row_00_col_03.png',
-        'assets/car_resize/row_00_col_04.png',
-        'assets/car_resize/row_00_col_05.png',
-        'assets/car_resize/row_00_col_06.png',
+        // Car reduce size2 images (12 images)
+        'assets/car_reduce_size2/image_0.png',
+        'assets/car_reduce_size2/image_1.png',
+        'assets/car_reduce_size2/image_2.png',
+        'assets/car_reduce_size2/image_3.png',
+        'assets/car_reduce_size2/image_4.png',
+        'assets/car_reduce_size2/image_5.png',
+        'assets/car_reduce_size2/image_6.png',
+        'assets/car_reduce_size2/image_7.png',
+        'assets/car_reduce_size2/image_8.png',
+        'assets/car_reduce_size2/image_9.png',
+        'assets/car_reduce_size2/image_10.png',
+        'assets/car_reduce_size2/image_11.png',
         // Person blur red hairs images (12 images)
         'assets/person_blur_red_hairs/image_0.png',
         'assets/person_blur_red_hairs/image_1.png',
@@ -689,13 +723,19 @@ document.addEventListener('DOMContentLoaded', function() {
             100: 'assets/horse_uncle/image_11.png'
         },
         'car-resize': {
-            0: 'assets/car_resize/row_00_col_00.png',
-            17: 'assets/car_resize/row_00_col_01.png',
-            33: 'assets/car_resize/row_00_col_02.png',
-            50: 'assets/car_resize/row_00_col_03.png',
-            67: 'assets/car_resize/row_00_col_04.png',
-            83: 'assets/car_resize/row_00_col_05.png',
-            100: 'assets/car_resize/row_00_col_06.png'
+            0: 'assets/car_reduce_size2/image_0.png',
+            8: 'assets/car_reduce_size2/image_1.png',
+            17: 'assets/car_reduce_size2/image_2.png',
+            25: 'assets/car_reduce_size2/image_3.png',
+            33: 'assets/car_reduce_size2/image_4.png',
+            42: 'assets/car_reduce_size2/image_5.png',
+            50: 'assets/car_reduce_size2/image_6.png',
+            58: 'assets/car_reduce_size2/image_7.png',
+            67: 'assets/car_reduce_size2/image_8.png',
+            75: 'assets/car_reduce_size2/image_9.png',
+            83: 'assets/car_reduce_size2/image_10.png',
+            92: 'assets/car_reduce_size2/image_11.png',
+            100: 'assets/car_reduce_size2/image_11.png'
         },
         'person-blur-red-hairs': {
             0: 'assets/person_blur_red_hairs/image_0.png',

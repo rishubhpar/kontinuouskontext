@@ -421,7 +421,8 @@ body {
     margin: 40px 0;
 }
 
-.inline-teaser-gif {
+.inline-teaser-gif,
+.inline-teaser-video {
     max-width: 100%;
     width: auto;
     height: auto;
@@ -1266,7 +1267,8 @@ li {
         margin: 30px 0;
     }
     
-    .inline-teaser-gif {
+    .inline-teaser-gif,
+    .inline-teaser-video {
         max-height: 350px;
     }
     

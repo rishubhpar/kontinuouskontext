@@ -66,7 +66,7 @@
                     <div class="teaser-container">
                         <!-- Predefined instruction display -->
                         <div class="simple-instruction">
-                            'Transform her dress as if it is made up of shiny gold material'
+                            'Transform the scene into a pixar style animation'
                         </div>
                         
                         <!-- Strength control slider -->
@@ -78,7 +78,7 @@
                         
                         <!-- Result display -->
                         <div class="edit-result" id="edit-result">
-                            <img id="result-image" src="assets/aesthetic_gold_dress/row_00_col_00.png" alt="Edited Result" class="result-img">
+                            <img id="result-image" src="assets/aesthetic_model2_teaser_pixar/image_0.png" alt="Edited Result" class="result-img">
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
             
             <!-- Inline teaser GIF -->
             <div class="inline-teaser-container">
-                <img src="assets/teaser.gif" alt="Kontinuous Kontext Interactive Interface Demo" class="inline-teaser-gif">
+                <video src="assets/teaser.mov" alt="Kontinuous Kontext Interactive Interface Demo" class="inline-teaser-video" autoplay muted loop controls></video>
             </div>
         </section>
 
@@ -142,7 +142,7 @@
                         </div>
                     </div>
                     <div class="example-result">
-                        <img id="car-resize-image" src="assets/car_resize/row_00_col_00.png" alt="Resize Car Result" class="result-img">
+                        <img id="car-resize-image" src="assets/car_reduce_size2/image_0.png" alt="Resize Car Result" class="result-img">
                     </div>
                 </div>
 
@@ -185,44 +185,43 @@
                     As obtaining a real dataset of image edit and strength pairs is challenging, we generate a synthetic dataset using generative models to obtain this training signal. 
                     Our dataset construction pipeline consists of three main steps:
                 </p>
-                
-                <div class="dataset-steps">
-                    <div class="dataset-step">
-                        <div class="step-header">
-                            <span class="step-letter">a</span>
-                            <h4 class="step-title">Image Collection & Instruction Generation</h4>
-                        </div>
-                        <p class="step-description">
-                            We start with a dataset of diverse source images and generate edit instructions using a Vision Language Model (VLM). 
-                            We use these instructions to edit the source images using Flux Kontext, creating our initial image-instruction pairs.
-                        </p>
-                    </div>
-                    
-                    <div class="dataset-step">
-                        <div class="step-header">
-                            <span class="step-letter">b</span>
-                            <h4 class="step-title">Diffusion-Based Image Morphing</h4>
-                        </div>
-                        <p class="step-description">
-                            In the second step, we use the source and edited images to generate interpolations between them using a 
-                            diffusion-based image morphing model. This creates smooth transitions across different strength levels.
-                        </p>
-                    </div>
-                    
-                    <div class="dataset-step">
-                        <div class="step-header">
-                            <span class="step-letter">c</span>
-                            <h4 class="step-title">Quality Filtering & Refinement</h4>
-                        </div>
-                        <p class="step-description">
-                            The diffusion-based image morphing can generate inconsistent transitions or artifacts and suffer from identity preservation issues. 
-                            To address these inconsistencies, we apply extensive filtering to remove poor quality samples. 
-                            Finally, we obtain 60K high-quality image edit sequences with varying editing categories.
-                        </p>
-                    </div>
+            </div>
+            
+            <!-- Dataset Subsection 1: Image Collection & Instruction Generation -->
+            <div class="dataset-subsection">
+                <h3>Step a): Generating image edting pairs</h3>
+                <div class="dataset-content">
+                    <p class="dataset-description">
+                        We start with a dataset of diverse source images and generate edit instructions using a Vision Language Model (VLM). 
+                        We use these instructions to edit the source images using Flux Kontext, creating our initial image-instruction pairs.
+                    </p>
+                    <img src="assets/dataset-website-a.svg" alt="Image Collection & Instruction Generation" class="dataset-img dataset-img-a">
                 </div>
-                
-                <img src="assets/kontinuous_kontext_dataset.svg" alt="Dataset Construction Pipeline" class="dataset-img">
+            </div>
+
+            <!-- Dataset Subsection 2: Diffusion-Based Image Morphing -->
+            <div class="dataset-subsection">
+                <h3>Step b): Generating edits with intermediate strength using image morphing</h3>
+                <div class="dataset-content">
+                    <p class="dataset-description">
+                        In the second step, we use the source and edited images to generate interpolations between them using a 
+                        diffusion-based image morphing model. This creates smooth transitions across different strength levels.
+                    </p>
+                    <img src="assets/dataset-website-b.svg" alt="Diffusion-Based Image Morphing" class="dataset-img dataset-img-b">
+                </div>
+            </div>
+
+            <!-- Dataset Subsection 3: Quality Filtering & Refinement -->
+            <div class="dataset-subsection">
+                <h3>Step c): Filtering poor quality samples</h3>
+                <div class="dataset-content">
+                    <p class="dataset-description">
+                        The diffusion-based image morphing can generate inconsistent transitions or artifacts and suffer from identity preservation issues. 
+                        To address these inconsistencies, we apply extensive filtering to remove poor quality samples. 
+                        Finally, we obtain 60K high-quality image edit sequences with varying editing categories.
+                    </p>
+                    <img src="assets/dataset-website-c.svg" alt="Quality Filtering & Refinement" class="dataset-img dataset-img-c">
+                </div>
             </div>
         </section>
 
@@ -239,7 +238,6 @@
                     The projector additionally takes the pooled clip embeddings of the edit instruction as input to make the modulation adaptive based on the edit type. 
                     To make the model more expressive and learn from our rich dataset, we train a LoRA on all the attention layers along with the projector network with 
                     a standard diffusion denoising loss. 
-                    
                 </p>
                 
                 <img src="assets/kontinuous_kontext_method.svg" alt="Method Architecture" class="method-img">
