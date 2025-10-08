@@ -34,14 +34,14 @@
                         <span class="header-author">Daniil Ostashev</span>
                         <span class="header-author"><a href="https://cds.iisc.ac.in/faculty/venky/" style="color: inherit; text-decoration: none;">R Venkatesh Babu</a></span>
                         <span class="header-author"><a href="https://danielcohenor.com/" style="color: inherit; text-decoration: none;">Daniel Cohen-Or</a></span>
-                        <span class="header-author"><a href="https://wangkua1.github.io/" style="color: inherit; text-decoration: none;">Jackson Wang</a></span>
+                        <span class="header-author"><a href="https://wangkua1.github.io/" style="color: inherit; text-decoration: none;">Kuan-Chieh Wang</a></span>
                     </div>
                     
                     <!-- Affiliations -->
                     <div class="header-affiliations">
                         <span class="header-affiliation">Snap Research</span><br>
-                        <span class="header-affiliation">Tel Aviv University</span><br>
-                        <span class="header-affiliation">IISc Bangalore</span>
+                        <span class="header-affiliation">IISc Bangalore</span><br>
+                        <span class="header-affiliation">Tel Aviv University</span>
                     </div>
 
                     <!-- TLDR Section -->
@@ -66,7 +66,7 @@
                     <div class="teaser-container">
                         <!-- Predefined instruction display -->
                         <div class="simple-instruction">
-                            'Transform the scene into a pixar style animation'
+                            'Transform the scene into a 3D animation style' 
                         </div>
                         
                         <!-- Strength control slider -->
@@ -104,7 +104,7 @@
             
             <!-- Inline teaser GIF -->
             <div class="inline-teaser-container">
-                <video src="assets/teaser.mov" alt="Kontinuous Kontext Interactive Interface Demo" class="inline-teaser-video" autoplay muted loop controls></video>
+                <video id="teaser-video" src="assets/teaser.mov" alt="Kontinuous Kontext Interactive Interface Demo" class="inline-teaser-video" autoplay muted controls></video>
             </div>
         </section>
 
@@ -265,29 +265,7 @@
                     </div>
                 </div>
 
-                <!-- Result 2: Aviator Glasses -->
-                <div class="example-tile">
-                    <div class="example-instruction">
-                        'Transform the glasses into aviator sunglasses'
-                    </div>
-                    <div class="example-slider-container">
-                        <div class="slider-container">
-                            <span class="strength-label">0.0</span>
-                            <input type="range" id="glasses-aviator-slider" class="strength-slider" min="0" max="100" value="0" step="1">
-                            <span class="strength-label">1.0</span>
-                        </div>
-                    </div>
-                    <div class="example-result">
-                        <img id="glasses-aviator-image" src="assets/glasses_aviator/image_0.png" alt="Aviator Glasses Result" class="result-img">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Results Section 2 -->
-        <section class="interactive-examples">
-            <div class="examples-grid">
-                <!-- Result 3: Venice Vegetation -->
+                <!-- Result 2: Venice Vegetation -->
                 <div class="example-tile">
                     <div class="example-instruction">
                         'Grow vegetation on the walls of the buildings on both sides'
@@ -301,6 +279,28 @@
                     </div>
                     <div class="example-result">
                         <img id="venice-vegetation-image" src="assets/venice1_Grow_vegetation_on_t_3/image_0.png" alt="Venice Vegetation Result" class="result-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section 2 -->
+        <section class="interactive-examples">
+            <div class="examples-grid">
+                <!-- Result 3: Tibet Autumn -->
+                <div class="example-tile">
+                    <div class="example-instruction">
+                        'Transform the scene into an autumn season with dense leaves falling and on the ground'
+                    </div>
+                    <div class="example-slider-container">
+                        <div class="slider-container">
+                            <span class="strength-label">0.0</span>
+                            <input type="range" id="tibbet-autumn-slider" class="strength-slider" min="0" max="100" value="0" step="1">
+                            <span class="strength-label">1.0</span>
+                        </div>
+                    </div>
+                    <div class="example-result">
+                        <img id="tibbet-autumn-image" src="assets/tibbet_autumn/image_0.png" alt="Tibet Autumn Result" class="result-img">
                     </div>
                 </div>
 
@@ -343,20 +343,20 @@
                     </div>
                 </div>
 
-                <!-- Result 6: Chubby and Fat -->
+                <!-- Result 9: Aviator Glasses -->
                 <div class="example-tile">
                     <div class="example-instruction">
-                        'Make her chubby and fat'
+                        'Transform the glasses into aviator sunglasses'
                     </div>
                     <div class="example-slider-container">
                         <div class="slider-container">
                             <span class="strength-label">0.0</span>
-                            <input type="range" id="model1-chubby-fat-slider" class="strength-slider" min="0" max="100" value="0" step="1">
+                            <input type="range" id="glasses-aviator-slider" class="strength-slider" min="0" max="100" value="0" step="1">
                             <span class="strength-label">1.0</span>
                         </div>
                     </div>
                     <div class="example-result">
-                        <img id="model1-chubby-fat-image" src="assets/model1_chubby_and_fat/image_0.png" alt="Chubby Fat Result" class="result-img">
+                        <img id="glasses-aviator-image" src="assets/glasses_aviator/image_0.png" alt="Aviator Glasses Result" class="result-img">
                     </div>
                 </div>
             </div>
@@ -365,23 +365,6 @@
         <!-- Results Section 5 -->
         <section class="interactive-examples">
             <div class="examples-grid">
-                <!-- Result 9: Tibet Autumn -->
-                <div class="example-tile">
-                    <div class="example-instruction">
-                        'Transform the scene into an autumn season with dense leaves falling and on the ground'
-                    </div>
-                    <div class="example-slider-container">
-                        <div class="slider-container">
-                            <span class="strength-label">0.0</span>
-                            <input type="range" id="tibbet-autumn-slider" class="strength-slider" min="0" max="100" value="0" step="1">
-                            <span class="strength-label">1.0</span>
-                        </div>
-                    </div>
-                    <div class="example-result">
-                        <img id="tibbet-autumn-image" src="assets/tibbet_autumn/image_0.png" alt="Tibet Autumn Result" class="result-img">
-                    </div>
-                </div>
-
                 <!-- Result 10: Ghibli Style -->
                 <div class="example-tile">
                     <div class="example-instruction">
@@ -396,28 +379,6 @@
                     </div>
                     <div class="example-result">
                         <img id="horse-uncle-image" src="assets/horse_uncle/image_0.png" alt="Ghibli Style Result" class="result-img">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Results Section 6 -->
-        <section class="interactive-examples">
-            <div class="examples-grid">
-                <!-- Result 11: Woody Fat -->
-                <div class="example-tile">
-                    <div class="example-instruction">
-                        'Make him fat and chubby'
-                    </div>
-                    <div class="example-slider-container">
-                        <div class="slider-container">
-                            <span class="strength-label">0.0</span>
-                            <input type="range" id="woody-fat-slider" class="strength-slider" min="0" max="100" value="0" step="1">
-                            <span class="strength-label">1.0</span>
-                        </div>
-                    </div>
-                    <div class="example-result">
-                        <img id="woody-fat-image" src="assets/woody_fat_and_chubby/image_0.png" alt="Woody Fat Result" class="result-img">
                     </div>
                 </div>
 
@@ -439,6 +400,7 @@
                 </div>
             </div>
         </section>
+
     </main>
 
         <!-- Footer

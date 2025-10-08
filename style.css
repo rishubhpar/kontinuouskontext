@@ -511,8 +511,8 @@ body {
 
 /* Dataset Section */
 .dataset-section {
-    margin: 50px 0;
-    padding: 40px;
+    margin: 30px 0;
+    padding: 25px;
     background-color: #f8f9fa;
     border-radius: 12px;
     border-left: 4px solid #95a5a6;
@@ -522,9 +522,32 @@ body {
 .dataset-section h2 {
     color: #2c3e50;
     font-size: 1.8em;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-align: center;
     font-weight: 600;
+}
+
+/* Dataset Subsections */
+.dataset-subsection {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.dataset-subsection:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.dataset-subsection h3 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #3498db;
+    display: inline-block;
 }
 
 .dataset-description {
@@ -682,6 +705,29 @@ body {
     margin-bottom: 30px;
     text-align: center;
     font-weight: 600;
+}
+
+/* Method Subsections */
+.method-subsection {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.method-subsection:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.method-subsection h3 {
+    color: #2c3e50;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+    display: inline-block;
 }
 
 .method-overview {
@@ -855,6 +901,25 @@ body {
     max-width: 100%;
     height: auto;
     margin: 30px 0;
+}
+
+/* Specific sizing for dataset figures */
+.dataset-img-a {
+    max-width: 38.4%; /* Reduced by 20% from 48% */
+    display: block;
+    margin: 20px auto;
+}
+
+.dataset-img-b {
+    max-width: 72%; /* Reduced by 10% from 80% */
+    display: block;
+    margin: 20px auto;
+}
+
+.dataset-img-c {
+    max-width: 57.6%; /* Increased by 20% from 48% */
+    display: block;
+    margin: 20px auto;
 }
 
 .method-img {

@@ -136,6 +136,19 @@ function updateProjectInfo(projectData) {
 //     abstract: "We present <strong>My Amazing Project</strong>, a novel approach..."
 // });
 
+// Teaser video with delayed restart
+document.addEventListener('DOMContentLoaded', function() {
+    const teaserVideo = document.getElementById('teaser-video');
+    if (teaserVideo) {
+        teaserVideo.addEventListener('ended', function() {
+            setTimeout(() => {
+                teaserVideo.currentTime = 0;
+                teaserVideo.play();
+            }, 2000); // 2 second delay
+        });
+    }
+});
+
 // Image Edit Slider Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const strengthSlider = document.getElementById('strength-slider');
@@ -401,19 +414,6 @@ function preloadExampleImages() {
         'assets/model2_sunlight/image_9.png',
         'assets/model2_sunlight/image_10.png',
         'assets/model2_sunlight/image_11.png',
-        // Model1 Chubby and Fat images (12 images)
-        'assets/model1_chubby_and_fat/image_0.png',
-        'assets/model1_chubby_and_fat/image_1.png',
-        'assets/model1_chubby_and_fat/image_2.png',
-        'assets/model1_chubby_and_fat/image_3.png',
-        'assets/model1_chubby_and_fat/image_4.png',
-        'assets/model1_chubby_and_fat/image_5.png',
-        'assets/model1_chubby_and_fat/image_6.png',
-        'assets/model1_chubby_and_fat/image_7.png',
-        'assets/model1_chubby_and_fat/image_8.png',
-        'assets/model1_chubby_and_fat/image_9.png',
-        'assets/model1_chubby_and_fat/image_10.png',
-        'assets/model1_chubby_and_fat/image_11.png',
         // Panda Indoor2 Husky Dog images (12 images)
         'assets/panda_indoor2_husky_dog/image_0.png',
         'assets/panda_indoor2_husky_dog/image_1.png',
@@ -466,19 +466,6 @@ function preloadExampleImages() {
         'assets/venice1_Grow_vegetation_on_t_3/image_9.png',
         'assets/venice1_Grow_vegetation_on_t_3/image_10.png',
         'assets/venice1_Grow_vegetation_on_t_3/image_11.png',
-        // Woody Fat and Chubby images (12 images)
-        'assets/woody_fat_and_chubby/image_0.png',
-        'assets/woody_fat_and_chubby/image_1.png',
-        'assets/woody_fat_and_chubby/image_2.png',
-        'assets/woody_fat_and_chubby/image_3.png',
-        'assets/woody_fat_and_chubby/image_4.png',
-        'assets/woody_fat_and_chubby/image_5.png',
-        'assets/woody_fat_and_chubby/image_6.png',
-        'assets/woody_fat_and_chubby/image_7.png',
-        'assets/woody_fat_and_chubby/image_8.png',
-        'assets/woody_fat_and_chubby/image_9.png',
-        'assets/woody_fat_and_chubby/image_10.png',
-        'assets/woody_fat_and_chubby/image_11.png',
         // Enfield3 Winter Snow images (12 images)
         'assets/enfield3_winter_snow/image_0.png',
         'assets/enfield3_winter_snow/image_1.png',
@@ -831,21 +818,6 @@ document.addEventListener('DOMContentLoaded', function() {
             92: 'assets/model2_sunlight/image_11.png',
             100: 'assets/model2_sunlight/image_11.png'
         },
-        'model1-chubby-fat': {
-            0: 'assets/model1_chubby_and_fat/image_0.png',
-            8: 'assets/model1_chubby_and_fat/image_1.png',
-            17: 'assets/model1_chubby_and_fat/image_2.png',
-            25: 'assets/model1_chubby_and_fat/image_3.png',
-            33: 'assets/model1_chubby_and_fat/image_4.png',
-            42: 'assets/model1_chubby_and_fat/image_5.png',
-            50: 'assets/model1_chubby_and_fat/image_6.png',
-            58: 'assets/model1_chubby_and_fat/image_7.png',
-            67: 'assets/model1_chubby_and_fat/image_8.png',
-            75: 'assets/model1_chubby_and_fat/image_9.png',
-            83: 'assets/model1_chubby_and_fat/image_10.png',
-            92: 'assets/model1_chubby_and_fat/image_11.png',
-            100: 'assets/model1_chubby_and_fat/image_11.png'
-        },
         'panda-husky': {
             0: 'assets/panda_indoor2_husky_dog/image_0.png',
             8: 'assets/panda_indoor2_husky_dog/image_1.png',
@@ -906,21 +878,6 @@ document.addEventListener('DOMContentLoaded', function() {
             92: 'assets/venice1_Grow_vegetation_on_t_3/image_11.png',
             100: 'assets/venice1_Grow_vegetation_on_t_3/image_11.png'
         },
-        'woody-fat': {
-            0: 'assets/woody_fat_and_chubby/image_0.png',
-            8: 'assets/woody_fat_and_chubby/image_1.png',
-            17: 'assets/woody_fat_and_chubby/image_2.png',
-            25: 'assets/woody_fat_and_chubby/image_3.png',
-            33: 'assets/woody_fat_and_chubby/image_4.png',
-            42: 'assets/woody_fat_and_chubby/image_5.png',
-            50: 'assets/woody_fat_and_chubby/image_6.png',
-            58: 'assets/woody_fat_and_chubby/image_7.png',
-            67: 'assets/woody_fat_and_chubby/image_8.png',
-            75: 'assets/woody_fat_and_chubby/image_9.png',
-            83: 'assets/woody_fat_and_chubby/image_10.png',
-            92: 'assets/woody_fat_and_chubby/image_11.png',
-            100: 'assets/woody_fat_and_chubby/image_11.png'
-        },
         'enfield-winter-snow': {
             0: 'assets/enfield3_winter_snow/image_0.png',
             8: 'assets/enfield3_winter_snow/image_1.png',
@@ -944,12 +901,10 @@ document.addEventListener('DOMContentLoaded', function() {
     setupExampleSlider('lamp-yellow', 'lamp-yellow-slider', 'lamp-yellow-image', exampleMappings['lamp-yellow']);
     setupExampleSlider('man-fur-jacket-bike', 'man-fur-jacket-bike-slider', 'man-fur-jacket-bike-image', exampleMappings['man-fur-jacket-bike']);
     setupExampleSlider('model2-sunlight', 'model2-sunlight-slider', 'model2-sunlight-image', exampleMappings['model2-sunlight']);
-    setupExampleSlider('model1-chubby-fat', 'model1-chubby-fat-slider', 'model1-chubby-fat-image', exampleMappings['model1-chubby-fat']);
     setupExampleSlider('panda-husky', 'panda-husky-slider', 'panda-husky-image', exampleMappings['panda-husky']);
     setupExampleSlider('person-blur-pixar', 'person-blur-pixar-slider', 'person-blur-pixar-image', exampleMappings['person-blur-pixar']);
     setupExampleSlider('tibbet-autumn', 'tibbet-autumn-slider', 'tibbet-autumn-image', exampleMappings['tibbet-autumn']);
     setupExampleSlider('venice-vegetation', 'venice-vegetation-slider', 'venice-vegetation-image', exampleMappings['venice-vegetation']);
-    setupExampleSlider('woody-fat', 'woody-fat-slider', 'woody-fat-image', exampleMappings['woody-fat']);
     setupExampleSlider('enfield-winter-snow', 'enfield-winter-snow-slider', 'enfield-winter-snow-image', exampleMappings['enfield-winter-snow']);
 });
 
